@@ -14,23 +14,23 @@
     <nav class="topnav"><a href="../index.html">首頁</a><a href="../index.html#collections">知識頁</a><a href="../AGENTS.md">AI 維護規則</a></nav>
   </header>
   <div class="layout">
-    <aside class="sidebar"><a class="back-home" href="../index.html">← 回到 Wiki 首頁</a><div class="side-group"><span>研究主題</span><a class="side-link " href="../wiki-pages/page-013.html">LLM 金融技術分析</a></div>
+    <aside class="sidebar"><a class="back-home" href="../index.html">← 回到 Wiki 首頁</a><div class="side-group"><span>研究主題</span><a class="side-link " href="../wiki-pages/page-014.html">LLM 金融技術分析</a></div>
 <div class="side-group"><span>核心概念</span><a class="side-link " href="../wiki-pages/page-001.html">Agent 反思與檢索式記憶</a><a class="side-link active" href="../wiki-pages/page-002.html">CoT 與 Few-Shot 提示策略</a><a class="side-link " href="../wiki-pages/page-003.html">LLM-as-a-Judge 評估</a><a class="side-link " href="../wiki-pages/page-004.html">PAL：程式輔助語言模型與外部執行</a><a class="side-link " href="../wiki-pages/page-005.html">ReAct：推理與行動迴圈</a><a class="side-link " href="../wiki-pages/page-006.html">大型語言模型代理人</a><a class="side-link " href="../wiki-pages/page-007.html">自適應提示詞與 PromptEvolver</a></div>
-<div class="side-group"><span>研究來源</span><a class="side-link " href="../wiki-pages/page-011.html">以 LLM Agent 為核心之股票技術面分析輔助系統</a><a class="side-link " href="../wiki-pages/page-010.html">結合 LLM 新聞標題情緒分析與股價方向預測之研究</a><a class="side-link " href="../wiki-pages/page-008.html">結合 LLM 驅動之新聞處理與多元技術指標於股票趨勢預測</a><a class="side-link " href="../wiki-pages/page-009.html">融合大語言模型新聞篩選、財經情感分析與技術指標之台灣股價預測研究</a></div>
-<div class="side-group"><span>綜述與比較</span><a class="side-link " href="../wiki-pages/page-012.html">LLM 新聞與技術指標股價預測：四篇來源比較</a></div></aside>
+<div class="side-group"><span>研究來源</span><a class="side-link " href="../wiki-pages/page-008.html">StockAgent：LLM 多代理人股票市場模擬</a><a class="side-link " href="../wiki-pages/page-012.html">以 LLM Agent 為核心之股票技術面分析輔助系統</a><a class="side-link " href="../wiki-pages/page-011.html">結合 LLM 新聞標題情緒分析與股價方向預測之研究</a><a class="side-link " href="../wiki-pages/page-009.html">結合 LLM 驅動之新聞處理與多元技術指標於股票趨勢預測</a><a class="side-link " href="../wiki-pages/page-010.html">融合大語言模型新聞篩選、財經情感分析與技術指標之台灣股價預測研究</a></div>
+<div class="side-group"><span>綜述與比較</span><a class="side-link " href="../wiki-pages/page-013.html">LLM 金融研究：新聞、技術指標、Agent 與市場模擬比較</a></div></aside>
     <main class="main-content"><article class="wiki-page">
   <nav class="breadcrumbs"><a href="../index.html">首頁</a><span>›</span><span>核心概念</span></nav>
   <header class="page-header"><div class="eyebrow">🧩　核心概念</div><h1>CoT 與 Few-Shot 提示策略</h1><div class="page-meta"><span class="tag">CoT</span><span class="tag">Few-Shot</span><span class="tag">Prompting</span><span class="tag">程式碼生成</span></div></header>
   <div class="prose"><h1 id="CoT 與 Few-Shot 提示策略">CoT 與 Few-Shot 提示策略</h1>
 <h2 id="本來源的觀察">本來源的觀察</h2>
-<p><a href="../wiki-pages/page-011.html">李旻珊2026-LLM-Agent股票技術分析</a> 以 GPT-4o 生成 MACD 計算程式，FewShot_AAB、FewShot_BBA 和無示範 CoT 各執行 10 次。三組均可執行且組內輸出風格一致率為 100%；Few-Shot 的回傳形式隨多數示範改變，CoT 組則產生序列式輸出，並在作者檢視中包含 MACD 線、信號線與柱狀圖（印刷頁 25–28、35–37）。</p>
+<p><a href="../wiki-pages/page-012.html">李旻珊2026-LLM-Agent股票技術分析</a> 以 GPT-4o 生成 MACD 計算程式，FewShot_AAB、FewShot_BBA 和無示範 CoT 各執行 10 次。三組均可執行且組內輸出風格一致率為 100%；Few-Shot 的回傳形式隨多數示範改變，CoT 組則產生序列式輸出，並在作者檢視中包含 MACD 線、信號線與柱狀圖（印刷頁 25–28、35–37）。</p>
 <p>作者推論，示範配置可能把輸出限縮在範例形式，而 CoT 能促使模型動用其已具備的公開領域知識。但這僅是單一 MACD 程式生成任務、三組各 10 次的結果；一致性不是正確性的同義詞，也不能據此確立 CoT 普遍勝過 Few-Shot。</p>
 <h2 id="知識類型與策略">知識類型與策略</h2>
 <p>論文提出一個可檢驗的區分：模型預訓練可能已涵蓋的公開通用知識，可測試 CoT 是否足夠；私有規則或模型未見的專門知識則需要範例、檢索或微調提供資訊。實際選擇應依任務測試，而不是把單一提示方法當通則。</p>
 <h2 id="延伸">延伸</h2>
 <ul>
 <li><a href="../wiki-pages/page-004.html">PAL：程式輔助語言模型與外部執行</a>：提示策略不能取代實際數值執行。</li>
-<li><a href="../wiki-pages/page-011.html">以 LLM Agent 為核心之股票技術面分析輔助系統</a>。</li>
+<li><a href="../wiki-pages/page-012.html">以 LLM Agent 為核心之股票技術面分析輔助系統</a>。</li>
 <li>Chain-of-Thought 原始文獻線索：Wei et al.（2022），詳見來源頁參考文獻。</li>
 </ul></div>
   <div class="page-bottom"><a href="../index.html">← 回到知識總覽</a><a href="../wiki/concepts/CoT與FewShot提示策略.md">查看 Markdown 原頁 ↗</a></div>

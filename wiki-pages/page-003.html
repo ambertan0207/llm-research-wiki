@@ -14,20 +14,20 @@
     <nav class="topnav"><a href="../index.html">首頁</a><a href="../index.html#collections">知識頁</a><a href="../AGENTS.md">AI 維護規則</a></nav>
   </header>
   <div class="layout">
-    <aside class="sidebar"><a class="back-home" href="../index.html">← 回到 Wiki 首頁</a><div class="side-group"><span>研究主題</span><a class="side-link " href="../wiki-pages/page-013.html">LLM 金融技術分析</a></div>
+    <aside class="sidebar"><a class="back-home" href="../index.html">← 回到 Wiki 首頁</a><div class="side-group"><span>研究主題</span><a class="side-link " href="../wiki-pages/page-014.html">LLM 金融技術分析</a></div>
 <div class="side-group"><span>核心概念</span><a class="side-link " href="../wiki-pages/page-001.html">Agent 反思與檢索式記憶</a><a class="side-link " href="../wiki-pages/page-002.html">CoT 與 Few-Shot 提示策略</a><a class="side-link active" href="../wiki-pages/page-003.html">LLM-as-a-Judge 評估</a><a class="side-link " href="../wiki-pages/page-004.html">PAL：程式輔助語言模型與外部執行</a><a class="side-link " href="../wiki-pages/page-005.html">ReAct：推理與行動迴圈</a><a class="side-link " href="../wiki-pages/page-006.html">大型語言模型代理人</a><a class="side-link " href="../wiki-pages/page-007.html">自適應提示詞與 PromptEvolver</a></div>
-<div class="side-group"><span>研究來源</span><a class="side-link " href="../wiki-pages/page-011.html">以 LLM Agent 為核心之股票技術面分析輔助系統</a><a class="side-link " href="../wiki-pages/page-010.html">結合 LLM 新聞標題情緒分析與股價方向預測之研究</a><a class="side-link " href="../wiki-pages/page-008.html">結合 LLM 驅動之新聞處理與多元技術指標於股票趨勢預測</a><a class="side-link " href="../wiki-pages/page-009.html">融合大語言模型新聞篩選、財經情感分析與技術指標之台灣股價預測研究</a></div>
-<div class="side-group"><span>綜述與比較</span><a class="side-link " href="../wiki-pages/page-012.html">LLM 新聞與技術指標股價預測：四篇來源比較</a></div></aside>
+<div class="side-group"><span>研究來源</span><a class="side-link " href="../wiki-pages/page-008.html">StockAgent：LLM 多代理人股票市場模擬</a><a class="side-link " href="../wiki-pages/page-012.html">以 LLM Agent 為核心之股票技術面分析輔助系統</a><a class="side-link " href="../wiki-pages/page-011.html">結合 LLM 新聞標題情緒分析與股價方向預測之研究</a><a class="side-link " href="../wiki-pages/page-009.html">結合 LLM 驅動之新聞處理與多元技術指標於股票趨勢預測</a><a class="side-link " href="../wiki-pages/page-010.html">融合大語言模型新聞篩選、財經情感分析與技術指標之台灣股價預測研究</a></div>
+<div class="side-group"><span>綜述與比較</span><a class="side-link " href="../wiki-pages/page-013.html">LLM 金融研究：新聞、技術指標、Agent 與市場模擬比較</a></div></aside>
     <main class="main-content"><article class="wiki-page">
   <nav class="breadcrumbs"><a href="../index.html">首頁</a><span>›</span><span>核心概念</span></nav>
   <header class="page-header"><div class="eyebrow">🧩　核心概念</div><h1>LLM-as-a-Judge 評估</h1><div class="page-meta"><span class="tag">LLM評估</span><span class="tag">LLM-as-a-Judge</span><span class="tag">評估偏誤</span></div></header>
   <div class="prose"><h1 id="LLM-as-a-Judge 評估">LLM-as-a-Judge 評估</h1>
 <h2 id="FinAgent 中的作法">FinAgent 中的作法</h2>
-<p>論文以 GPT-4o 作回答評審，依題型設定 0–3 分或五級評分，並要求評審檢查數值、方向與完整性。PromptEvolver 亦使用 GPT-4o 依結構化欄位評分、找缺漏及產出具體改進規則；低分規則向量化保存，供同類問題使用（<a href="../wiki-pages/page-011.html">李旻珊2026-LLM-Agent股票技術分析</a>，印刷頁 20–21、32–40）。</p>
+<p>論文以 GPT-4o 作回答評審，依題型設定 0–3 分或五級評分，並要求評審檢查數值、方向與完整性。PromptEvolver 亦使用 GPT-4o 依結構化欄位評分、找缺漏及產出具體改進規則；低分規則向量化保存，供同類問題使用（<a href="../wiki-pages/page-012.html">李旻珊2026-LLM-Agent股票技術分析</a>，印刷頁 20–21、32–40）。</p>
 <h2 id="可信度限制">可信度限制</h2>
 <p>同一模型同時生成與評審可能帶來共同偏誤。提示詞設計能規範評分流程，但不能自行證明評分與真實品質一致。論文也承認應加入跨模型或金融專家評審。未來研究宜公開評分準則、盲測答案來源，報告與人工專家一致性，並搭配可機械驗證的客觀指標（例如計算值與基準差異、程式是否通過測試）。</p>
 <h2 id="Wiki 評估原則">Wiki 評估原則</h2>
-<p>把「評審給分」與「獨立可驗證的任務成功」分開記錄；避免單一 judge 分數成為整套系統的唯一證據。參見 <a href="../wiki-pages/page-001.html">Agent 反思與檢索式記憶</a> 與 <a href="../wiki-pages/page-011.html">以 LLM Agent 為核心之股票技術面分析輔助系統</a>。</p></div>
+<p>把「評審給分」與「獨立可驗證的任務成功」分開記錄；避免單一 judge 分數成為整套系統的唯一證據。參見 <a href="../wiki-pages/page-001.html">Agent 反思與檢索式記憶</a> 與 <a href="../wiki-pages/page-012.html">以 LLM Agent 為核心之股票技術面分析輔助系統</a>。</p></div>
   <div class="page-bottom"><a href="../index.html">← 回到知識總覽</a><a href="../wiki/concepts/LLM-as-a-Judge評估.md">查看 Markdown 原頁 ↗</a></div>
 </article></main>
   </div>

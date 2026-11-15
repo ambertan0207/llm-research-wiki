@@ -65,3 +65,16 @@
 
 - 新增 `README.md`，說明 Wiki 的目的、資料架構、AI 如何依 `AGENTS.md` 延續維護，以及網站重建方式。
 - README 連結本機網站、Wiki 索引、維護規則及跨來源比較，並標記 GitHub／Pages 連結待部署後補上。
+
+## [2026-11-15] ingest | 新增 StockAgent 多代理人市場模擬研究
+
+- 新增 raw/When-AI-Meets-Finance-StockAgent.pdf（arXiv:2407.18957v5，33 頁）。
+- 新增來源頁，標記出版狀態與 RQ3 實驗期間差異待核。
+- 更新 LLM 金融技術分析主題、五篇來源比較、index.md 及網站。
+- 明確區分模擬行為與真實市場績效證據。
+
+## [2026-11-15] output | 股票研究裡的 LLM Agent 教學 HTML 簡報
+
+- Notes 僅依 Wiki 整理，候選文獻另列於末尾。
+- 完成 10 頁逐頁稿、HTML 簡報、作業說明及 loop／graph 執行反思紀錄。
+- 重建 Wiki 網站並完成 HTML 結構、頁數和本機路徑靜態檢查。目視及手機實機檢查尚待人工確認。

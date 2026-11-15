@@ -4,7 +4,7 @@
 
 ## 專案目的
 
-本 Wiki 目前從 LLM Agent 與股票分析研究出發，整理系統架構、新聞情緒分析、技術指標、評估方法與研究限制。資料庫已收錄四篇相關論文，並建立來源頁、概念頁、主題頁與跨來源比較。
+本 Wiki 目前從 LLM Agent 與股票分析研究出發，整理系統架構、新聞情緒分析、技術指標、評估方法與研究限制。資料庫已收錄五篇相關論文，並建立來源頁、概念頁、主題頁與跨來源比較。
 
 此專案用於研究整理與知識管理，不提供個人化投資建議；論文中的模型結果也不等於已證明可穩定獲利。
 
@@ -72,4 +72,10 @@ python tools/build_wiki_site.py
 
 ## GitHub 與網站部署
 
-本機網站已可瀏覽。GitHub 儲存庫及公開網站連結將在上傳與 Pages 部署完成後補入。
+GitHub 儲存庫：[ambertan0207/llm-research-wiki](https://github.com/ambertan0207/llm-research-wiki)；公開網站：[LLM 研究 Wiki](https://ambertan0207.github.io/llm-research-wiki/)。
+
+## 教學 HTML 簡報作業
+
+- [作業提交說明](./作業提交說明.md)
+- [教學簡報：股票研究裡的 LLM Agent](./html/20261115-llm-agent-stock-market-tutorial/index.html)
+- [執行與反思紀錄](./notes/20261115-llm-agent-stock-market-tutorial/execution-reflection.md)

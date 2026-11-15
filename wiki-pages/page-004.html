@@ -14,10 +14,10 @@
     <nav class="topnav"><a href="../index.html">首頁</a><a href="../index.html#collections">知識頁</a><a href="../AGENTS.md">AI 維護規則</a></nav>
   </header>
   <div class="layout">
-    <aside class="sidebar"><a class="back-home" href="../index.html">← 回到 Wiki 首頁</a><div class="side-group"><span>研究主題</span><a class="side-link " href="../wiki-pages/page-013.html">LLM 金融技術分析</a></div>
+    <aside class="sidebar"><a class="back-home" href="../index.html">← 回到 Wiki 首頁</a><div class="side-group"><span>研究主題</span><a class="side-link " href="../wiki-pages/page-014.html">LLM 金融技術分析</a></div>
 <div class="side-group"><span>核心概念</span><a class="side-link " href="../wiki-pages/page-001.html">Agent 反思與檢索式記憶</a><a class="side-link " href="../wiki-pages/page-002.html">CoT 與 Few-Shot 提示策略</a><a class="side-link " href="../wiki-pages/page-003.html">LLM-as-a-Judge 評估</a><a class="side-link active" href="../wiki-pages/page-004.html">PAL：程式輔助語言模型與外部執行</a><a class="side-link " href="../wiki-pages/page-005.html">ReAct：推理與行動迴圈</a><a class="side-link " href="../wiki-pages/page-006.html">大型語言模型代理人</a><a class="side-link " href="../wiki-pages/page-007.html">自適應提示詞與 PromptEvolver</a></div>
-<div class="side-group"><span>研究來源</span><a class="side-link " href="../wiki-pages/page-011.html">以 LLM Agent 為核心之股票技術面分析輔助系統</a><a class="side-link " href="../wiki-pages/page-010.html">結合 LLM 新聞標題情緒分析與股價方向預測之研究</a><a class="side-link " href="../wiki-pages/page-008.html">結合 LLM 驅動之新聞處理與多元技術指標於股票趨勢預測</a><a class="side-link " href="../wiki-pages/page-009.html">融合大語言模型新聞篩選、財經情感分析與技術指標之台灣股價預測研究</a></div>
-<div class="side-group"><span>綜述與比較</span><a class="side-link " href="../wiki-pages/page-012.html">LLM 新聞與技術指標股價預測：四篇來源比較</a></div></aside>
+<div class="side-group"><span>研究來源</span><a class="side-link " href="../wiki-pages/page-008.html">StockAgent：LLM 多代理人股票市場模擬</a><a class="side-link " href="../wiki-pages/page-012.html">以 LLM Agent 為核心之股票技術面分析輔助系統</a><a class="side-link " href="../wiki-pages/page-011.html">結合 LLM 新聞標題情緒分析與股價方向預測之研究</a><a class="side-link " href="../wiki-pages/page-009.html">結合 LLM 驅動之新聞處理與多元技術指標於股票趨勢預測</a><a class="side-link " href="../wiki-pages/page-010.html">融合大語言模型新聞篩選、財經情感分析與技術指標之台灣股價預測研究</a></div>
+<div class="side-group"><span>綜述與比較</span><a class="side-link " href="../wiki-pages/page-013.html">LLM 金融研究：新聞、技術指標、Agent 與市場模擬比較</a></div></aside>
     <main class="main-content"><article class="wiki-page">
   <nav class="breadcrumbs"><a href="../index.html">首頁</a><span>›</span><span>核心概念</span></nav>
   <header class="page-header"><div class="eyebrow">🧩　核心概念</div><h1>PAL：程式輔助語言模型與外部執行</h1><div class="page-meta"><span class="tag">PAL</span><span class="tag">程式執行</span><span class="tag">數值可靠性</span><span class="tag">LLM-Agent</span></div></header>
@@ -25,12 +25,12 @@
 <h2 id="核心分工">核心分工</h2>
 <p>Program-Aided Language Models（PAL）把語意理解／問題分解交給 LLM，把可程式化的計算交給外部執行器。LLM 可產生程式或計算計畫，執行器產生數值結果，LLM 再據此解釋。單靠「寫出看似正確的程式碼」仍不等於完成計算；程式必須在可控環境實際執行，結果才可檢查。</p>
 <h2 id="FinAgent 的對照結果">FinAgent 的對照結果</h2>
-<p><a href="../wiki-pages/page-011.html">李旻珊2026-LLM-Agent股票技術分析</a> 將原生 LLM、PAL No-Execution、PAL Full 比較，各 6 題。No-Execution 要模型生成程式碼但仍由模型自行估數；平均 0.17/3、5/6 題失敗，其中 4 題方向錯誤。PAL Full 把後端計算的指標數值交給 GPT-4o 解讀，6/6 滿分（印刷頁 31–40）。作者據此採用 Node.js VM 執行數值程式。</p>
+<p><a href="../wiki-pages/page-012.html">李旻珊2026-LLM-Agent股票技術分析</a> 將原生 LLM、PAL No-Execution、PAL Full 比較，各 6 題。No-Execution 要模型生成程式碼但仍由模型自行估數；平均 0.17/3、5/6 題失敗，其中 4 題方向錯誤。PAL Full 把後端計算的指標數值交給 GPT-4o 解讀，6/6 滿分（印刷頁 31–40）。作者據此採用 Node.js VM 執行數值程式。</p>
 <p>這是本論文最直接支持的設計原則：需要精確的數字計算時，生成步驟與執行結果必須分開驗證。證據仍受小樣本、固定模型、同模型評審與特定測試題型限制。</p>
 <h2 id="工程與評估問題">工程與評估問題</h2>
 <p>程式執行環境須限制權限、資源與可用 API；輸入資料、公式、缺值及時間索引也須獨立驗證。應把結果與可信基準交叉檢查，並測試錯誤輸入、邊界條件和工具失敗。執行環境可減少心算式幻覺，但不能保證資料源正確、程式邏輯正確或自然語言解讀正確。</p>
 <h2 id="延伸">延伸</h2>
-<p>參見 <a href="../wiki-pages/page-006.html">大型語言模型代理人</a>、<a href="../wiki-pages/page-013.html">LLM 金融技術分析</a>；原始 PAL 書目見來源頁（Gao et al., 2023）。</p></div>
+<p>參見 <a href="../wiki-pages/page-006.html">大型語言模型代理人</a>、<a href="../wiki-pages/page-014.html">LLM 金融技術分析</a>；原始 PAL 書目見來源頁（Gao et al., 2023）。</p></div>
   <div class="page-bottom"><a href="../index.html">← 回到知識總覽</a><a href="../wiki/concepts/PAL程式輔助與外部執行.md">查看 Markdown 原頁 ↗</a></div>
 </article></main>
   </div>

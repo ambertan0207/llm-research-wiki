@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="LLM 研究 Wiki：來源可追溯、頁面互相連結並持續整理。">
   <meta name="theme-color" content="#F7F1E5">
-  <title>LLM 新聞與技術指標股價預測：四篇來源比較｜LLM 研究 Wiki</title>
+  <title>以 LLM Agent 為核心之股票技術面分析輔助系統｜LLM 研究 Wiki</title>
   <link rel="stylesheet" href="../wiki-assets/site.css">
 </head>
 <body>
@@ -14,47 +14,56 @@
     <nav class="topnav"><a href="../index.html">首頁</a><a href="../index.html#collections">知識頁</a><a href="../AGENTS.md">AI 維護規則</a></nav>
   </header>
   <div class="layout">
-    <aside class="sidebar"><a class="back-home" href="../index.html">← 回到 Wiki 首頁</a><div class="side-group"><span>研究主題</span><a class="side-link " href="../wiki-pages/page-013.html">LLM 金融技術分析</a></div>
+    <aside class="sidebar"><a class="back-home" href="../index.html">← 回到 Wiki 首頁</a><div class="side-group"><span>研究主題</span><a class="side-link " href="../wiki-pages/page-014.html">LLM 金融技術分析</a></div>
 <div class="side-group"><span>核心概念</span><a class="side-link " href="../wiki-pages/page-001.html">Agent 反思與檢索式記憶</a><a class="side-link " href="../wiki-pages/page-002.html">CoT 與 Few-Shot 提示策略</a><a class="side-link " href="../wiki-pages/page-003.html">LLM-as-a-Judge 評估</a><a class="side-link " href="../wiki-pages/page-004.html">PAL：程式輔助語言模型與外部執行</a><a class="side-link " href="../wiki-pages/page-005.html">ReAct：推理與行動迴圈</a><a class="side-link " href="../wiki-pages/page-006.html">大型語言模型代理人</a><a class="side-link " href="../wiki-pages/page-007.html">自適應提示詞與 PromptEvolver</a></div>
-<div class="side-group"><span>研究來源</span><a class="side-link " href="../wiki-pages/page-011.html">以 LLM Agent 為核心之股票技術面分析輔助系統</a><a class="side-link " href="../wiki-pages/page-010.html">結合 LLM 新聞標題情緒分析與股價方向預測之研究</a><a class="side-link " href="../wiki-pages/page-008.html">結合 LLM 驅動之新聞處理與多元技術指標於股票趨勢預測</a><a class="side-link " href="../wiki-pages/page-009.html">融合大語言模型新聞篩選、財經情感分析與技術指標之台灣股價預測研究</a></div>
-<div class="side-group"><span>綜述與比較</span><a class="side-link active" href="../wiki-pages/page-012.html">LLM 新聞與技術指標股價預測：四篇來源比較</a></div></aside>
+<div class="side-group"><span>研究來源</span><a class="side-link " href="../wiki-pages/page-008.html">StockAgent：LLM 多代理人股票市場模擬</a><a class="side-link active" href="../wiki-pages/page-012.html">以 LLM Agent 為核心之股票技術面分析輔助系統</a><a class="side-link " href="../wiki-pages/page-011.html">結合 LLM 新聞標題情緒分析與股價方向預測之研究</a><a class="side-link " href="../wiki-pages/page-009.html">結合 LLM 驅動之新聞處理與多元技術指標於股票趨勢預測</a><a class="side-link " href="../wiki-pages/page-010.html">融合大語言模型新聞篩選、財經情感分析與技術指標之台灣股價預測研究</a></div>
+<div class="side-group"><span>綜述與比較</span><a class="side-link " href="../wiki-pages/page-013.html">LLM 金融研究：新聞、技術指標、Agent 與市場模擬比較</a></div></aside>
     <main class="main-content"><article class="wiki-page">
-  <nav class="breadcrumbs"><a href="../index.html">首頁</a><span>›</span><span>綜述與比較</span></nav>
-  <header class="page-header"><div class="eyebrow">🧵　綜述與比較</div><h1>LLM 新聞與技術指標股價預測：四篇來源比較</h1><div class="page-meta"><span class="tag">LLM</span><span class="tag">金融</span><span class="tag">股價預測</span><span class="tag">新聞情緒</span><span class="tag">技術指標</span><span class="tag">比較</span></div></header>
-  <div class="prose"><h1 id="LLM 新聞與技術指標股價預測：四篇來源比較">LLM 新聞與技術指標股價預測：四篇來源比較</h1>
-<h2 id="範圍與讀法">範圍與讀法</h2>
-<p>比較目前 Wiki 已納入的四篇台灣碩士論文，聚焦系統定位、LLM 任務、預測目標、評估設計與證據限制。這些論文的股票、時間、模型與切分方式不同，數值不可直接排名；本文是跨來源整理，並非領域共識或投資建議。</p>
-<h2 id="研究設計對照">研究設計對照</h2>
-<div class="table-wrap"><table><thead><tr><th>來源</th><th>LLM 的位置</th><th>預測方法／目標</th><th>可見主要結果</th><th>核心限制</th></tr></thead><tbody>
-<tr><td><a href="../wiki-pages/page-011.html">李旻珊2026-LLM-Agent股票技術分析</a></td><td>Agent 透過工具取得行情、以程式執行指標計算</td><td>GPT-4o、ReAct、PAL；小型技術分析概念驗證</td><td>工具與 PAL Full 各 6/6 滿分；No-Execution 5/6 失敗</td><td>小樣本、單模型／評審、無交易績效</td></tr>
-<tr><td><a href="../wiki-pages/page-010.html">張耿瑜2025-LLM新聞情緒與台積電預測</a></td><td>Ollama 本地 Gemma／DeepSeek 產生新聞情緒</td><td>MLR 預測台積電隔日收盤價</td><td>測試 RMSE 約 18.37 元、R² 約 0.5949</td><td>單股單年；未見情緒特徵獨立消融；題名與目標措辭不一致</td></tr>
-<tr><td><a href="../wiki-pages/page-008.html">吳奉恩2026-MTI-LLM多技術指標與新聞處理</a></td><td>Qwen2.5:3B 篩選新聞並產生情緒特徵</td><td>XGBoost、TFT；隔日收盤價</td><td>摘要報告多數比較改善</td><td>摘要與方法章標的數量不一致；資料規模受限</td></tr>
-<tr><td><a href="../wiki-pages/page-009.html">孫佳鴻2026-LLM新聞篩選與台股預測</a></td><td>LLM 關鍵字篩選作基準前處理；自身固定 FinBERT 情緒</td><td>XGBoost；隔日收盤價，16 組特徵、5 種子</td><td>Q3 平均 MAE 降 11.3%、MSE 降 22.4%</td><td>隨機切分與全樣本 scaler 有前視偏誤風險；中文標題使用英文 FinBERT</td></tr>
+  <nav class="breadcrumbs"><a href="../index.html">首頁</a><span>›</span><span>研究來源</span></nav>
+  <header class="page-header"><div class="eyebrow">📚　研究來源</div><h1>以 LLM Agent 為核心之股票技術面分析輔助系統</h1><div class="page-meta"><span class="tag">LLM-Agent</span><span class="tag">FinTech</span><span class="tag">技術分析</span><span class="tag">碩士論文</span></div></header>
+  <div class="prose"><h1 id="以 LLM Agent 為核心之股票技術面分析輔助系統">以 LLM Agent 為核心之股票技術面分析輔助系統</h1>
+<h2 id="書目與來源">書目與來源</h2>
+<ul>
+<li>作者：李旻珊（Min-Shan Li）</li>
+<li>年份：2026（民國 115 年）；PDF 封面標示中華民國一百一十五年七月，檔案中繼資料建立日期為 2026-07-06。</li>
+<li>類型：國立中興大學科技管理研究所碩士論文。</li>
+<li>指導教授：張樹之（Shu-Chih Ernest Chang）。</li>
+<li>英文題名：<em>A Stock Technical Analysis Assistant System Based on LLM Agent</em>。</li>
+<li>DOI／永久網址：本文未列出。</li>
+<li>原始檔：<a href="../raw/以LLM-Agent為核心之股票技術面分析輔助系統.pdf">PDF</a>。</li>
+<li>閱讀範圍：全文 74 頁；本頁重點整理摘要、第三章概念驗證與第六章討論／限制。頁碼以下使用論文印刷頁碼。</li>
+</ul>
+<h2 id="研究問題與貢獻主張">研究問題與貢獻主張</h2>
+<p>論文聚焦散戶如何用自然語言取得即時股價與技術指標的個人化解讀。作者指出，直接讓 LLM 回答會遇到兩類問題：模型無法自行取得訓練截止後的行情，以及多步驟數值計算可能產生具體但方向錯誤的回答。研究建置 FinAgent，將 LLM 用於理解問題、規劃與文字解讀，將即時資料取得及精確指標計算交給外部工具／程式執行，並以記憶機制支援失敗修復與後續品質改善。</p>
+<p>作者的主要設計主張是：垂直領域 Agent 的可靠性仰賴工具使用與結果整合、任務適配的提示策略、可執行的確定性計算，以及適當的反思／記憶管理；各元件需以對照試驗分別檢驗，而非只堆疊架構名詞。</p>
+<h2 id="系統設計">系統設計</h2>
+<p>FinAgent 以 GPT-4o API 作為推理核心，使用 ReAct 迴圈按任務需要呼叫即時股價及技術指標工具，並以 Node.js 後端執行生成的 JavaScript 計算程式。系統另含 Reflexion 錯誤診斷／重試、向量資料庫中的跨任務記憶、依評審回饋檢索提示改進規則的 PromptEvolver，以及自然語言分析模組。論文描述的技術組合包括 Yahoo Finance API、LanceDB、text-embedding-3-small、Node.js VM、React 前端。這些是該原型的實作選擇，不代表唯一或普遍最佳架構。</p>
+<p>概念上可連結 <a href="../wiki-pages/page-006.html">大型語言模型代理人</a>、<a href="../wiki-pages/page-005.html">ReAct：推理與行動迴圈</a>、<a href="../wiki-pages/page-004.html">PAL：程式輔助語言模型與外部執行</a>、<a href="../wiki-pages/page-001.html">Agent 反思與檢索式記憶</a>、<a href="../wiki-pages/page-007.html">自適應提示詞與PromptEvolver</a>、<a href="../wiki-pages/page-002.html">CoT 與 Few-Shot 提示策略</a>、<a href="../wiki-pages/page-003.html">LLM-as-a-Judge 評估</a>、<a href="../wiki-pages/page-014.html">LLM 金融技術分析</a>。</p>
+<h2 id="四項概念驗證">四項概念驗證</h2>
+<div class="table-wrap"><table><thead><tr><th>設計</th><th>對照與任務</th><th>論文報告結果</th><th>可支持的結論與界線</th></tr></thead><tbody>
+<tr><td>1. 工具增強</td><td>原生 GPT-4o 對上 ReAct 工具增強 Agent；6 題涵蓋即時資料、單一指標、多指標分析。</td><td>原生模型 0/6 題得分；工具組 6/6 滿分，平均 1.67 次工具呼叫、2.67 輪迭代。（印刷頁 22–24、34–35）</td><td>在作者設定的題目與基準下，外部資料／指標工具使即時問答可完成；樣本只有 6 題，不能據此推論真實投資績效。</td></tr>
+<tr><td>2. 程式碼提示策略</td><td>MACD 程式碼生成；Few-Shot AAB、BBA 和無示範 CoT，各 10 次。</td><td>各組風格一致率與可執行率皆為 100%；AAB 採單值回傳，BBA 與 CoT 採序列回傳。作者觀察 CoT 生成含 MACD 線、信號線與柱狀圖的完整程式，Few-Shot 輸出則受示範範圍限制。（印刷頁 25–28、35–37）</td><td>結果支持示範配置會影響輸出形式；但任務集中於一個指標與固定模型，且各組輸出風格不同，不足以證明 CoT 普遍優於 Few-Shot。</td></tr>
+<tr><td>3. Reflexion 與 RAG</td><td>兩種歷史多指標任務；Zero-shot、Reflexion Only、Reflexion+RAG，各 6 筆。</td><td>三組 Pass@1 均為 6/6（100%），沒有觸發修復或失敗。（印刷頁 28–30、37–39）</td><td>在此小型、規格明確的測試中無法量出反思／RAG 的增量效果；這不是它們有效或無效的證據。作者也指出天花板效應與任務覆蓋不足。</td></tr>
+<tr><td>4. PAL 執行</td><td>原生 LLM、生成程式但不執行（PAL No-Execution）、後端實際計算後交由 LLM 解讀（PAL Full）；6 題。</td><td>平均分別為 0/3、0.17/3、3/3；No-Execution 6 題中 5 題失敗，其中 4 題為方向錯誤；PAL Full 6/6 滿分。（印刷頁 31–40）</td><td>結果強烈支持在本研究任務中把精確數值計算交給實際執行環境，而非讓模型估算。樣本數小，且評審由同一 GPT-4o 擔任，需留意評估者偏誤。</td></tr>
 </tbody></table></div>
-<h2 id="綜合觀察">綜合觀察</h2>
-<ol>
-<li><strong>LLM 用途不同。</strong> FinAgent 把 LLM 放在 Agent 推理及工具協調層；張耿瑜與吳奉恩用 LLM 產生新聞情緒或篩選特徵；孫佳鴻則以先行研究的 LLM 關鍵字篩選作基準，再研究技術、籌碼與市場情緒特徵。不能把「含 LLM」視為同一方法。</li>
-<li><strong>預測目標需先對齊。</strong> 張耿瑜、吳奉恩、孫佳鴻主要呈現隔日收盤價迴歸；FinAgent 來源頁聚焦工具使用與指標問答。名稱含「方向／趨勢」不代表實驗就是漲跌分類。</li>
-<li><strong>特徵有增益的證據取決於比較設計。</strong> 孫佳鴻以受控特徵組合較能分離特徵家族的邊際影響，但其驗證切分有偏誤風險。張耿瑜報告整體模型結果，不能據此把效果歸因於 LLM 情緒單一特徵。其他論文也不能外推至相同市場和年份。</li>
-<li><strong>誤差改善不是投資績效。</strong> 四篇來源均不足以共同支持「可穩定獲利」的結論。仍需嚴格時間外推、交易成本／滑價、風險調整報酬與多市場測試。</li>
-<li><strong>吳奉恩與孫佳鴻兩篇待做版本／承接核查。</strong> 兩篇均為 2026 年、同一指導教授且使用 MTI-LLM 名稱，但方法差異明確；吳奉恩論文摘要與方法章的股票數也不一致。應維持為不同來源，日後核對原始表格、資料集與研究承接關係。</li>
-</ol>
-<h2 id="研究缺口">研究缺口</h2>
+<p>所有概念驗證均以 GPT-4o、Temperature 0 執行。第四項的基準數值以後端計算並與 TradingView 人工比對；評分亦由 GPT-4o 依提示詞執行。這些方法細節限制了結果的外部效度與獨立重現性。</p>
+<h2 id="系統展示與理論脈絡">系統展示與理論脈絡</h2>
+<p>論文展示四類互動案例：RSI 超買判斷、多指標訊號整合、結合均線共識的進場區間討論，以及 K 線型態說明。展示案例中的數值、股票與時間脈絡屬於系統示範，不應直接視為可泛化的交易建議。作者以科技接受模型（TAM）、有限理性與自動化信任討論其定位：減少查數據和計算的認知負擔、展示資料與工具軌跡，並把系統界定為決策輔助而非人類判斷替代品。實際使用者是否覺得有用、易用或建立適當信任，本文沒有以正式使用者研究驗證。</p>
+<h2 id="主要限制與未解問題">主要限制與未解問題</h2>
 <ul>
-<li>需要以相同股票、日期、新聞語料與嚴格時間序列切分，對照原始價量、傳統情緒模型、LLM 情緒、LLM 新聞篩選及 Agent 工具執行。</li>
-<li>需逐項報告新聞時間戳與市場資料可得時間，避免未來新聞或盤後資料洩漏至預測特徵。</li>
-<li>需要把分類指標、價格誤差、交易策略績效與使用者決策品質分開衡量。</li>
-<li>建議取得何銘哲（2025）前置論文，並核對吳奉恩論文股票數、實驗表格和版本來源。</li>
+<li>研究範圍限於技術面分析，不涵蓋基本面、新聞情緒與總體經濟資訊，也沒有回測交易策略的實務績效。</li>
+<li>多數概念驗證樣本很小（每組 6 或 10 次），任務與標的有限；設計三所有組別首輪全過，無法比較記憶機制的邊際效益。</li>
+<li>GPT-4o 同時作生成模型與評審，可能引入共同模型偏誤；可用跨模型及金融專家評審補強。</li>
+<li>研究只測 GPT-4o，模型間的品質、延遲與成本差異尚未比較。</li>
+<li>即時行情資料來源、技術指標公式／資料對齊、VM 沙箱限制與系統錯誤處理，均是部署時需另行稽核的工程與資料品質問題；論文的小型概念驗證不等同正式金融產品的安全／可靠性認證。</li>
+<li>使用者接受度與信任校準尚待問卷或實地研究。</li>
 </ul>
-<h2 id="來源">來源</h2>
-<ul>
-<li><a href="../wiki-pages/page-011.html">李旻珊2026-LLM-Agent股票技術分析</a></li>
-<li><a href="../wiki-pages/page-010.html">張耿瑜2025-LLM新聞情緒與台積電預測</a></li>
-<li><a href="../wiki-pages/page-008.html">吳奉恩2026-MTI-LLM多技術指標與新聞處理</a></li>
-<li><a href="../wiki-pages/page-009.html">孫佳鴻2026-LLM新聞篩選與台股預測</a></li>
-</ul>
-<p>整理日期：2026-11-15。若新增原始前置論文或核實上述不一致，應更新此比較頁並記錄依據。</p></div>
-  <div class="page-bottom"><a href="../index.html">← 回到知識總覽</a><a href="../wiki/syntheses/LLM新聞技術指標股價預測-四篇來源比較.md">查看 Markdown 原頁 ↗</a></div>
+<h2 id="Wiki 綜合觀察">Wiki 綜合觀察</h2>
+<p>這篇論文對 LLM Agent 設計最可重用的經驗，是明確區分語意推理和可驗證計算：LLM 可把自然語言問題轉成計算步驟，再解讀輸出；確定性數字則由程式執行。工具調用能力解決資料新鮮度，執行環境解決算術可靠性，兩者處理的是不同失效來源。記憶與反思應被視為待用多樣任務、足夠失敗案例和長期追蹤驗證的能力，不能僅因有架構就宣稱已提升準確度。</p>
+<p>此綜合目前只依據單篇碩士論文，屬研究線索而非領域共識。後續來源可用來檢查外部工具 Agent 的評估設計、程式執行可靠性與金融場景的信任／風險治理。</p>
+<h2 id="參考文獻線索">參考文獻線索</h2>
+<p>論文核心引用包括 ReAct（Yao et al., 2023）、Reflexion（Shinn et al., 2023）、RAG（Lewis et al., 2020）、PAL（Gao et al., 2023）、Chain-of-Thought（Wei et al., 2022）、LLM-as-a-Judge（Zheng et al., 2023）。完整書目請見原始 PDF 參考文獻（印刷頁 64–67）；引用資訊應回到原文核對，不以本頁取代原論文。</p></div>
+  <div class="page-bottom"><a href="../index.html">← 回到知識總覽</a><a href="../wiki/sources/李旻珊2026-LLM-Agent股票技術分析.md">查看 Markdown 原頁 ↗</a></div>
 </article></main>
   </div>
   <footer class="site-footer"><span>LLM Wiki · 以原始來源為依據，持續累積可追溯的研究知識</span><a href="../index.html">回到首頁 ↑</a></footer>
