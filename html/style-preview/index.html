@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>簡報風格試樣｜奶油手帳 × 薰衣草剪貼簿</title>
+<style>
+:root{--cream:#F7F1E5;--lav:#C8BEDA;--blue:#B9CAD5;--pink:#E6C5CC;--peach:#E9B9AE;--sage:#B9C6AE;--ink:#3F3B46;--muted:#726D78;--paper:#FFFDF8;--line:#DED7CC}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:"Aptos","Microsoft JhengHei","PingFang TC",sans-serif;color:var(--ink)}body{background:radial-gradient(ellipse at 8% 15%,#e6c5cc66,transparent 22%),radial-gradient(ellipse at 92% 78%,#b9c6ae66,transparent 24%),#e8e2d8;display:grid;place-items:center;padding:22px}
+.app{width:min(1240px,100%)}.topline{display:flex;justify-content:space-between;align-items:center;margin:0 8px 12px;color:#625d68;font-size:14px;letter-spacing:.04em}.preview-tag{background:#fff8;border:1px solid #d4cabd;border-radius:999px;padding:7px 13px;font-weight:700}.screen{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:25px;background:var(--cream);box-shadow:0 24px 70px #514b4930,0 3px 10px #514b4915;border:1px solid #fff9}.slide{position:absolute;inset:0;padding:6.2% 7%;display:none;overflow:hidden}.slide.active{display:block;animation:appear .28s ease-out}@keyframes appear{from{opacity:.35;transform:translateY(6px)}to{opacity:1;transform:none}}
+.eyebrow{font-size:clamp(12px,1.35vw,16px);font-weight:700;letter-spacing:.12em;color:#77717c;text-transform:uppercase;display:flex;gap:10px;align-items:center}.eyebrow:before{content:"";width:24px;height:2px;background:var(--peach);border-radius:4px}.title{font-family:"DFKai-SB","BiauKai","Noto Serif TC",serif;font-weight:700;letter-spacing:.035em;line-height:1.22;margin:18px 0 12px;font-size:clamp(32px,5.2vw,65px)}.sub{font-size:clamp(16px,2vw,23px);color:var(--muted);line-height:1.65}.tape{position:absolute;width:110px;height:29px;background:#d9c9ab9c;top:23px;right:15%;transform:rotate(5deg);clip-path:polygon(3% 0,100% 4%,96% 100%,0 95%)}.doodle{position:absolute;color:#a996b2;font-size:42px;line-height:1;opacity:.8}.cover{background:linear-gradient(120deg,#f7f1e5 0 67%,#eee7f0 67%)}.cover .title{max-width:68%;margin-top:7%;font-size:clamp(38px,6vw,76px)}.cover .sub{max-width:58%}.issue{display:inline-flex;align-items:center;gap:8px;background:var(--paper);padding:10px 16px;border-radius:999px;border:1px solid #e9ded5;font-size:14px}.issue i{width:9px;height:9px;background:var(--sage);border-radius:50%}.stamp{position:absolute;right:11%;bottom:15%;width:205px;height:205px;border-radius:50%;background:var(--lav);display:grid;place-items:center;transform:rotate(8deg);box-shadow:inset 0 0 0 10px #ffffff35}.stamp:before{content:"";position:absolute;inset:15px;border:1px dashed #fff9;border-radius:50%}.stamp-content{text-align:center;font-family:"DFKai-SB","BiauKai",serif;font-weight:700;font-size:20px;line-height:1.6}.stamp-content span{display:block;font:700 12px "Aptos","Microsoft JhengHei",sans-serif;letter-spacing:.16em;color:#5e5667}.foot{position:absolute;bottom:5.3%;left:7%;right:7%;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#77717c}.foot a{color:#716482;text-decoration:none;border-bottom:1px solid #bcaec8}.page-num{font-family:Georgia,serif;font-size:15px}
+.paper{background:var(--paper);border:1px solid #e9e0d4;border-radius:18px;padding:22px 24px;box-shadow:0 7px 20px #493e2c0d;position:relative}.paper:after{content:"";position:absolute;width:56px;height:16px;right:21px;top:-7px;transform:rotate(3deg);background:#d8c8ad88}.flow{display:grid;grid-template-columns:1fr 42px 1fr 42px 1fr;gap:10px;align-items:stretch;margin-top:4.2%}.node{min-height:210px}.node:nth-of-type(1){background:#f4eff7}.node:nth-of-type(2){background:#eef4f2}.node:nth-of-type(3){background:#f9efed}.node .n{font-family:Georgia,serif;color:#8b8094;font-size:15px}.node h3{font-size:clamp(18px,2.2vw,26px);margin:17px 0 8px}.node p{font-size:clamp(14px,1.48vw,18px);line-height:1.55;color:#68636e;margin:0}.arrow{align-self:center;text-align:center;color:#a499aa;font-size:30px}.flowline{margin:19px auto 0;width:max-content;max-width:100%;border-radius:999px;padding:10px 19px;background:#ebe5ef;color:#554e5e;font-size:clamp(13px,1.55vw,18px);font-weight:700}.highlight{background:linear-gradient(transparent 56%,#e9d99a99 56%);padding:0 3px}.result-grid{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:15px;margin-top:4.2%;align-items:stretch}.metric{min-height:212px;display:flex;flex-direction:column;justify-content:space-between}.metric:nth-child(1){background:#edf3ee}.metric:nth-child(2){background:#f8ecea}.metric:nth-child(3){background:#f1edf5}.metric .label{font-size:14px;color:#726d78}.metric strong{font-family:Georgia,"DFKai-SB",serif;font-size:clamp(42px,6vw,70px);line-height:1;color:#544c5d}.metric p{font-size:clamp(13px,1.35vw,16px);line-height:1.5;color:#69636f;margin:0}.note{margin-top:16px;padding:11px 15px;border-left:4px solid var(--peach);background:#fff8ef;border-radius:0 12px 12px 0;font-size:clamp(12px,1.3vw,15px);line-height:1.5;color:#615c65}.controls{display:flex;justify-content:center;align-items:center;gap:14px;margin-top:12px}.controls button{border:1px solid #cfc4d2;background:#faf7fb;color:#554e5e;padding:9px 15px;border-radius:999px;font:600 14px "Aptos","Microsoft JhengHei",sans-serif;cursor:pointer}.controls button:hover{background:#eae3ef}.dots{display:flex;gap:7px}.dot{height:8px;width:8px;border-radius:8px;background:#c9c0c7}.dot.on{width:22px;background:#9385a2;transition:width .2s}.hint{text-align:center;font-size:12px;color:#77717c;margin-top:3px}.spark{color:#b598af}
+@media(max-width:700px){body{padding:10px}.screen{aspect-ratio:4/3;border-radius:17px}.slide{padding:6%}.cover .title{max-width:75%;margin-top:9%}.stamp{width:125px;height:125px;right:7%;bottom:12%}.stamp-content{font-size:14px}.stamp-content span{font-size:9px}.flow{grid-template-columns:1fr 20px 1fr 20px 1fr;gap:4px;margin-top:3%}.node{min-height:155px;padding:13px}.node h3{margin:8px 0 5px}.node p{font-size:12px}.paper{padding:15px}.result-grid{gap:7px;margin-top:3%}.metric{min-height:158px;padding:14px}.metric p{font-size:11px}.note{margin-top:8px;padding:8px 10px}.tape{width:70px;right:11%}.foot{left:6%;right:6%;bottom:3.4%;font-size:9px}.eyebrow{font-size:10px}.title{margin:9px 0}.sub{font-size:13px}.issue{font-size:10px;padding:7px 10px}.controls{margin-top:8px}.controls button{padding:7px 11px;font-size:12px}}
+@media print{body{display:block;padding:0;background:white}.topline,.controls,.hint{display:none!important}.app{width:100%}.screen{width:100%;aspect-ratio:16/9;overflow:visible;border:0;box-shadow:none;border-radius:0}.slide{display:block!important;position:relative;page-break-after:always;height:100vh}.foot{bottom:3%}}
+</style>
+</head>
+<body>
+<main class="app">
+  <div class="topline"><span>研究手帳 · LLM Agent × 金融分析</span><span class="preview-tag">風格提案｜尚未定案</span></div>
+  <section class="screen" aria-label="三頁簡報風格試樣">
+    <article class="slide cover active" aria-label="第 1 頁，封面">
+      <div class="tape"></div><div class="issue"><i></i>研究小誌　·　01</div>
+      <div class="eyebrow" style="margin-top:7%">LLM AGENT · FINTECH</div>
+      <h1 class="title">讓 LLM 動手查資料，<br>也把數字算對</h1>
+      <p class="sub">金融技術分析 Agent 的設計觀察<br>從即時工具到可驗證的計算</p>
+      <div class="stamp"><div class="stamp-content"><span>小小研究筆記</span>工具 × 推理<br>× 執行</div></div>
+      <div class="doodle" style="left:69%;top:23%;transform:rotate(-14deg)">✳</div><div class="doodle" style="right:8%;top:18%;font-size:24px;color:#d1a99e">✦</div>
+      <div class="foot"><span>風格試樣 · 內容取自 Wiki</span><span class="page-num">01 / 03</span></div>
+    </article>
+    <article class="slide" aria-label="第 2 頁，系統概念">
+      <div class="tape" style="background:#c9bfdc99;right:18%;transform:rotate(-4deg)"></div>
+      <div class="eyebrow">SYSTEM NOTE　/　01</div>
+      <h2 class="title" style="font-size:clamp(29px,4vw,50px)">把工作交給適合的角色</h2>
+      <p class="sub" style="margin:0">讓模型負責理解與解讀，讓工具和程式處理可查、可算的部分。</p>
+      <div class="flow">
+        <div class="paper node"><span class="n">01 · 理解</span><h3>LLM</h3><p>理解問題、規劃要找的資料，最後把結果整理成說明。</p></div>
+        <div class="arrow">→</div>
+        <div class="paper node"><span class="n">02 · 取得</span><h3>資料工具</h3><p>取得即時股價與歷史資料，提供技術指標計算所需輸入。</p></div>
+        <div class="arrow">→</div>
+        <div class="paper node"><span class="n">03 · 計算</span><h3>程式執行</h3><p>實際計算指標數值，再交回模型解釋。</p></div>
+      </div>
+      <div class="flowline">問題 <span class="spark">✳</span> 取數 <span class="spark">✳</span> 計算 <span class="spark">✳</span> 解讀</div>
+      <div class="foot"><a href="../../wiki/sources/李旻珊2026-LLM-Agent股票技術分析.md">依據：李旻珊（2026），FinAgent 來源頁</a><span class="page-num">02 / 03</span></div>
+    </article>
+    <article class="slide" aria-label="第 3 頁，研究結果">
+      <div class="tape" style="background:#b9c6ae99;right:14%;transform:rotate(4deg)"></div>
+      <div class="eyebrow">RESULTS　/　A SMALL PROOF OF CONCEPT</div>
+      <h2 class="title" style="font-size:clamp(29px,4vw,50px)">程式生成還不夠，<span class="highlight">真的執行</span>很重要</h2>
+      <p class="sub" style="margin:0">論文中的 6 題對照測試，呈現出明顯差異。</p>
+      <div class="result-grid">
+        <div class="paper metric"><span class="label">PAL Full · 實際執行</span><strong>6/6</strong><p>全部達滿分</p></div>
+        <div class="paper metric"><span class="label">PAL No-Execution · 模型估算</span><strong>5/6</strong><p>題目未通過，其中多數是方向判斷錯誤</p></div>
+        <div class="paper metric"><span class="label">Reflexion + RAG 測試</span><strong>100%</strong><p>三組首輪皆成功，這次測試無法量出記憶機制的額外效果</p></div>
+      </div>
+      <div class="note">研究界線｜小樣本概念驗證；結果不代表交易績效，也不能推論系統適用所有模型或市場。</div>
+      <div class="foot"><a href="../../wiki/sources/李旻珊2026-LLM-Agent股票技術分析.md">依據：來源頁「四項概念驗證」與「研究限制」</a><span class="page-num">03 / 03</span></div>
+    </article>
+  </section>
+  <nav class="controls" aria-label="試樣頁面切換"><button id="prev" type="button">← 上一頁</button><div class="dots" aria-label="頁碼"><span class="dot on"></span><span class="dot"></span><span class="dot"></span></div><button id="next" type="button">下一頁 →</button></nav>
+  <div class="hint">試樣導覽示意 · 可點按按鈕或使用 ← → 鍵；正式簡報的操作方式尚待討論</div>
+</main>
+<script>
+const slides=[...document.querySelectorAll('.slide')],dots=[...document.querySelectorAll('.dot')];let current=0;
+function show(i){current=(i+slides.length)%slides.length;slides.forEach((s,n)=>s.classList.toggle('active',n===current));dots.forEach((d,n)=>d.classList.toggle('on',n===current));}
+document.querySelector('#prev').addEventListener('click',()=>show(current-1));document.querySelector('#next').addEventListener('click',()=>show(current+1));
+addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();show(current+1)}if(e.key==='ArrowLeft'){e.preventDefault();show(current-1)}});
+</script>
+</body>
+</html>
+

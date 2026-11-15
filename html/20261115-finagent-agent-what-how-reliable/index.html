@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="依照 LLM 研究 Wiki 製作的 FinAgent 研究簡報：系統定義、運作方式與可靠度證據。">
+<meta name="updated" content="2026-11-15">
+<meta name="status" content="complete">
+<meta name="source-slides" content="../../slides/20261115-finagent-agent-what-how-reliable/slides.md">
+<title>FinAgent｜是什麼、如何運作、可靠度有多高？</title>
+<style>
+:root{--cream:#F7F1E5;--lav:#C8BEDA;--blue:#B9CAD5;--pink:#E6C5CC;--peach:#E9B9AE;--sage:#B9C6AE;--ink:#3F3B46;--muted:#716b76;--paper:#FFFDF8;--line:#e4dbcf;--purple-ink:#5f5668}
+*{box-sizing:border-box}html{background:#e9e3d9}body{margin:0;min-height:100vh;color:var(--ink);font-family:"Aptos","Microsoft JhengHei","PingFang TC",sans-serif;background:radial-gradient(ellipse at 8% 10%,#e6c5cc55,transparent 23%),radial-gradient(ellipse at 94% 86%,#b9c6ae55,transparent 24%),#e9e3d9;display:flex;flex-direction:column;align-items:center;padding:22px 18px 18px}.shell{width:min(1120px,100%)}.mast{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0 4px 12px;color:#615c67;font-size:14px}.mast strong{font-weight:600;letter-spacing:.07em}.draft{border:1px solid #d7ccbf;border-radius:999px;background:#fff9;padding:7px 13px;font-size:12px;color:#645c68;white-space:nowrap}.stage{position:relative;aspect-ratio:16/9;background:var(--cream);border:1px solid #fff9;border-radius:24px;overflow:hidden;box-shadow:0 22px 60px #514b4925,0 3px 10px #514b4910}.slide{position:absolute;inset:0;padding:5.7% 6.5% 7.2%;display:flex;flex-direction:column;overflow:auto;background:var(--cream);isolation:isolate}.slide[hidden]{display:none}.slide:before{content:"";position:absolute;z-index:-2;right:-8%;top:-32%;width:46%;height:88%;border-radius:0 0 0 55%;background:#ede7f1}.slide:after{content:"";position:absolute;z-index:-1;right:7%;top:5%;width:92px;height:20px;background:#cdbfda99;transform:rotate(4deg);clip-path:polygon(2% 0,100% 7%,96% 100%,0 93%)}.slide:nth-of-type(3n):before{background:#eaf0e7}.slide:nth-of-type(3n):after{background:#b9c6ae99}.slide:nth-of-type(3n+2):before{background:#f3e8eb}.slide:nth-of-type(3n+2):after{background:#e9b9ae99}.eyebrow{font-size:clamp(12px,1.25vw,15px);letter-spacing:.15em;color:#77717c;font-weight:700;display:flex;align-items:center;gap:10px;text-transform:uppercase}.eyebrow:before{content:"";display:inline-block;width:24px;height:2px;border-radius:2px;background:var(--peach)}h1,h2,h3,p{margin-top:0}.title{font-family:"DFKai-SB","BiauKai","Noto Serif TC",serif;letter-spacing:.035em;line-height:1.2;font-size:clamp(30px,4.2vw,50px);margin:16px 0 8px;max-width:92%}.subtitle{font-size:clamp(15px,1.7vw,20px);line-height:1.55;color:var(--muted);margin:0 0 18px;max-width:90%}.tag{width:max-content;display:inline-flex;align-items:center;gap:8px;background:var(--paper);border:1px solid #e9ded5;border-radius:999px;padding:8px 13px;color:#625d68;font-size:13px}.dotmark{width:8px;height:8px;border-radius:50%;background:var(--sage)}.cover{background:linear-gradient(119deg,var(--cream) 0 67%,#eee7f0 67%)}.cover:before{display:none}.cover .title{font-size:clamp(35px,5.35vw,64px);margin-top:7%;max-width:72%}.cover .subtitle{max-width:62%;font-size:clamp(17px,2vw,23px)}.cover-sticker{position:absolute;right:9%;bottom:14%;width:clamp(128px,18vw,184px);aspect-ratio:1;border-radius:50%;background:var(--lav);display:grid;place-items:center;text-align:center;transform:rotate(7deg);box-shadow:inset 0 0 0 9px #ffffff35;font-family:"DFKai-SB","BiauKai",serif;font-size:clamp(15px,1.8vw,21px);font-weight:700;line-height:1.55}.cover-sticker:before{content:"";position:absolute;inset:13px;border:1px dashed #fff9;border-radius:50%}.cover-sticker small{display:block;font:600 10px "Aptos","Microsoft JhengHei",sans-serif;letter-spacing:.14em;color:var(--purple-ink)}.cover-spark{position:absolute;right:26%;top:23%;font-size:34px;color:#aa98b4}.sourcefoot{position:absolute;left:6.5%;bottom:3%;right:6.5%;display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:11px;color:#77717c}.sourcefoot a{color:#6b5f78;text-decoration:none;border-bottom:1px solid #bcafc4}.page-label{font-family:Georgia,serif;white-space:nowrap}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:12px 0 0}.card{background:var(--paper);border:1px solid #ece2d8;border-radius:17px;padding:18px 20px;position:relative;box-shadow:0 7px 18px #443b310b;min-width:0}.card:before{content:"";position:absolute;top:-7px;left:20px;width:58px;height:15px;background:#d8c8ad99;transform:rotate(-4deg)}.card.lav{background:#f3eff7}.card.sage{background:#eef3ee}.card.pink{background:#f8eeec}.card.blue{background:#eef3f5}.card.yellow{background:#f8f4e8}.card h3{font-size:clamp(17px,1.75vw,22px);margin:12px 0 8px}.card p,.card li{font-size:clamp(13px,1.35vw,16px);line-height:1.55;color:#5f5a64;margin-bottom:0}.card .label{font-size:12px;color:#77717c;letter-spacing:.04em}.num{font:700 clamp(37px,5vw,62px)/1 Georgia,"DFKai-SB",serif;color:#554d5f;margin:14px 0 8px}.flow{display:grid;grid-template-columns:1fr 20px 1fr 20px 1fr 20px 1fr;align-items:stretch;gap:6px;margin:12px 0}.flow .card{min-height:170px}.arrow{align-self:center;text-align:center;font-size:25px;color:#9f94a6}.flowbar{align-self:center;margin-top:3px;padding:10px 17px;border-radius:999px;background:#ece6f0;color:#574f60;font-size:clamp(13px,1.4vw,16px);font-weight:600;text-align:center}.split{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:9px 0}.split .card{min-height:190px}.statrow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:10px 0}.statrow .card{min-height:155px}.note{padding:10px 14px;border-left:4px solid var(--peach);background:#fff8ef;border-radius:0 12px 12px 0;font-size:clamp(12px,1.2vw,14px);line-height:1.5;color:#5f5962;margin-top:9px}.em{background:linear-gradient(transparent 58%,#e9d99a99 58%);padding:0 2px}.chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 12px}.chip{background:#fffaf3;border:1px solid #e8ded1;border-radius:999px;padding:6px 11px;font-size:12px;color:#655f69}.list{margin:3px 0 0;padding-left:1.2em}.list li{padding:3px 0}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:8px 0}.grid2 .card{min-height:130px}.footbar{height:5px;border-radius:9px;background:#d8d0d4;overflow:hidden;margin:13px 4px 8px}.progress{height:100%;width:11.11%;background:#9d8cab;transition:width .25s ease}.nav{display:flex;align-items:center;justify-content:center;gap:15px}.nav button{min-height:42px;padding:8px 16px;border-radius:999px;border:1px solid #cfc5d1;background:#fffafc;color:#514a58;font:600 14px "Aptos","Microsoft JhengHei",sans-serif;cursor:pointer}.nav button:hover{background:#ece5f1}.nav button:focus-visible{outline:3px solid #81718f;outline-offset:3px}.counter{min-width:52px;text-align:center;color:#635d69;font-family:Georgia,serif;font-size:14px}.hint{text-align:center;color:#77717c;font-size:11px;margin-top:5px}.reading{display:grid;grid-template-columns:1fr 1fr;gap:9px 16px;margin:3px 0}.reading div{padding:9px 11px;background:#fffaf5;border-radius:12px;border:1px solid #eee4da}.reading strong{display:block;font-size:14px;margin-bottom:3px}.reading span{font-size:12px;color:#6c6670}.closing{font-size:clamp(18px,2.2vw,26px);line-height:1.55;font-family:"DFKai-SB","BiauKai","Noto Serif TC",serif}.closing strong{background:linear-gradient(transparent 63%,#e9d99a99 63%)}
+.buddy{position:absolute;z-index:3;top:3.4%;right:4.5%;width:clamp(68px,9vw,102px);aspect-ratio:1;background-image:url('assets/characters.png');background-size:300% 200%;background-repeat:no-repeat;pointer-events:none;filter:drop-shadow(0 4px 4px #5c4a3220)}.buddy--book{background-position:0% 0%}.buddy--robot{background-position:50% 0%}.buddy--chart{background-position:100% 0%}.buddy--laptop{background-position:0% 100%}.buddy--bars{background-position:50% 100%}.buddy--friends{background-position:100% 100%}.has-buddy .title{max-width:78%}.cover .buddy{top:27%;right:7%;width:clamp(76px,10vw,116px)}
+@media(max-width:760px){body{padding:10px}.mast{font-size:12px}.stage{aspect-ratio:auto;min-height:630px;border-radius:18px}.slide{padding:24px 22px 60px}.slide .title,.cover .title{font-size:clamp(27px,7vw,42px);max-width:100%}.cover .title{margin-top:11%}.cover .subtitle{max-width:72%;font-size:15px}.cover-sticker{right:6%;bottom:13%;width:112px;font-size:13px}.cover-sticker small{font-size:8px}.buddy{width:58px;top:3%;right:4%}.has-buddy .title{max-width:80%}.cover .buddy{width:76px;top:25%;right:5%}.flow{grid-template-columns:1fr;gap:8px}.flow .card{min-height:auto}.arrow{transform:rotate(90deg);font-size:20px}.cards,.statrow{grid-template-columns:1fr 1fr}.card{padding:14px}.split{gap:8px}.split .card{min-height:165px}.grid2{grid-template-columns:1fr 1fr;gap:8px}.reading{grid-template-columns:1fr}.sourcefoot{left:22px;right:22px;bottom:12px;font-size:9px}.note{font-size:12px}.flowbar{border-radius:15px}.subtitle{font-size:14px}.nav button{min-height:44px}}
+@media(max-width:430px){.stage{min-height:720px}.cards,.statrow,.split,.grid2{grid-template-columns:1fr}.cover .subtitle{max-width:70%}.cover-sticker{width:94px;right:5%;bottom:17%}.sourcefoot{font-size:8px}.slide{padding-left:18px;padding-right:18px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+@media print{html,body{background:#fff;padding:0;display:block}.shell{width:100%}.mast,.footbar,.nav,.hint{display:none!important}.stage{aspect-ratio:auto;overflow:visible;border:0;border-radius:0;box-shadow:none}.slide,.slide[hidden]{display:flex!important;position:relative;inset:auto;width:100%;height:100vh;page-break-after:always;overflow:hidden;border-radius:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}.sourcefoot{bottom:3%}}
+</style>
+</head>
+<body>
+<main class="shell">
+  <header class="mast"><strong>研究小誌　·　LLM Agent × FinTech</strong><span class="draft">依 Wiki 整理 · 試作版</span></header>
+  <section class="stage" id="deck" aria-label="研究簡報">
+    <article class="slide cover" id="slide-1" role="group" aria-roledescription="投影片" aria-label="第 1 頁，共 9 頁">
+      <div class="tag"><i class="dotmark"></i>研究小誌　·　01</div><div class="eyebrow" style="margin-top:7%">LLM AGENT　/　金融技術分析</div>
+      <h1 class="title">以 LLM Agent 為核心之股票技術面分析輔助系統<br>是什麼？如何運作？可靠度有多高？</h1>
+      <p class="subtitle">從即時資料與程式執行，看一個金融分析原型的能力邊界</p>
+      <div class="cover-sticker"><span><small>小小研究筆記</small>工具 × 推理<br>× 執行</span></div><span class="cover-spark" aria-hidden="true">✳</span><span class="buddy buddy--book" aria-hidden="true"></span>
+      <footer class="sourcefoot"><span>研究內容僅依 Wiki 已收錄資料整理</span><span class="page-label">01 / 09</span></footer>
+    </article>
+
+    <article class="slide" id="slide-2" role="group" aria-roledescription="投影片" aria-label="第 2 頁，共 9 頁" hidden>
+      <div class="eyebrow">SHORT ANSWER　/　01</div><h2 class="title">一句話：它是什麼？</h2><p class="subtitle">不是只會回答問題的聊天模型，而是一個會按任務使用工具的分析流程。</p>
+      <div class="cards">
+        <section class="card lav"><span class="label">理解與規劃</span><h3>LLM</h3><p>理解使用者問題、安排要做的步驟，並解讀最後取得的結果。</p></section>
+        <section class="card sage"><span class="label">資料取得</span><h3>外部工具</h3><p>取得行情與技術指標所需資料，補足模型沒有的即時市場資訊。</p></section>
+        <section class="card pink"><span class="label">確定性計算</span><h3>程式執行</h3><p>實際執行數值計算，再將結果交回模型整理成說明。</p></section>
+      </div>
+      <div class="note">FinAgent 的定位是股票技術面分析輔助原型，不是自動交易者，也不取代投資者判斷。</div>
+      <footer class="sourcefoot"><a href="../../wiki/concepts/大型語言模型代理人.md">Wiki：大型語言模型代理人</a><span class="page-label">02 / 09</span></footer>
+    </article>
+
+    <article class="slide has-buddy" id="slide-3" role="group" aria-roledescription="投影片" aria-label="第 3 頁，共 9 頁" hidden>
+      <div class="eyebrow">SYSTEM FLOW　/　02</div><span class="buddy buddy--robot" aria-hidden="true"></span><h2 class="title">一個問題，經過四個環節</h2><p class="subtitle">FinAgent 讓自然語言推理和可查、可算的工作彼此分工。</p>
+      <div class="flow">
+        <section class="card lav"><span class="label">01 · 規劃</span><h3>理解問題</h3><p>GPT-4o 判斷需要股價、指標或 K 線資訊。</p></section><div class="arrow" aria-hidden="true">→</div>
+        <section class="card sage"><span class="label">02 · 查詢</span><h3>呼叫資料工具</h3><p>按任務需要取得行情資料與指標輸入。</p></section><div class="arrow" aria-hidden="true">→</div>
+        <section class="card pink"><span class="label">03 · 計算</span><h3>程式執行</h3><p>Node.js 實際執行數值程式。</p></section><div class="arrow" aria-hidden="true">→</div>
+        <section class="card blue"><span class="label">04 · 回答</span><h3>整理與解讀</h3><p>模型依計算結果生成分析說明。</p></section>
+      </div>
+      <div class="flowbar">問題　✳　取數　✳　執行　✳　解讀</div>
+      <div class="chips"><span class="chip">ReAct：決定何時用工具</span><span class="chip">PAL：交由程式實際計算</span><span class="chip">Reflexion／RAG：修復與記憶</span></div>
+      <footer class="sourcefoot"><a href="../../wiki/sources/李旻珊2026-LLM-Agent股票技術分析.md">Wiki 來源：系統設計與工具流程</a><span class="page-label">03 / 09</span></footer>
+    </article>
+
+    <article class="slide has-buddy" id="slide-4" role="group" aria-roledescription="投影片" aria-label="第 4 頁，共 9 頁" hidden>
+      <div class="eyebrow">REACT　/　03</div><span class="buddy buddy--chart" aria-hidden="true"></span><h2 class="title">讓 Agent 查資料，不靠記憶猜行情</h2><p class="subtitle">ReAct 交替進行推理、工具行動與結果觀察。</p>
+      <div class="split">
+        <section class="card blue"><span class="label">原生 LLM · 6 題</span><div class="num">0 / 6</div><p>沒有外部資料工具時，未能回答這組即時數值題。</p></section>
+        <section class="card sage"><span class="label">Tool-Augmented Agent · 6 題</span><div class="num">6 / 6</div><p>全部滿分；平均 1.67 次工具呼叫、2.67 輪推理。</p></section>
+      </div>
+      <div class="note">這個結果支持工具有助於完成論文設定的即時資料題；它不測量未來股價預測能力。</div>
+      <footer class="sourcefoot"><a href="../../wiki/concepts/ReAct推理與行動.md">Wiki：ReAct 與來源論文印刷頁 22–24、34–35</a><span class="page-label">04 / 09</span></footer>
+    </article>
+
+    <article class="slide" id="slide-5" role="group" aria-roledescription="投影片" aria-label="第 5 頁，共 9 頁" hidden>
+      <div class="eyebrow">PAL　/　04</div><h2 class="title">程式碼生成還不夠，<span class="em">真的執行</span>很重要</h2><p class="subtitle">模型可以安排計算步驟，但實際數值交給執行環境處理。</p>
+      <div class="split">
+        <section class="card sage"><span class="label">PAL Full · 後端實際執行</span><div class="num">6 / 6</div><p>全部達到滿分。</p></section>
+        <section class="card pink"><span class="label">PAL No-Execution · 模型自行估算</span><div class="num">5 / 6 失敗</div><p>平均 0.17/3；其中 4 題連判斷方向也錯。</p></section>
+      </div>
+      <div class="flowbar">LLM 分解問題　→　Node.js 執行計算　→　LLM 解讀結果</div>
+      <div class="note">這是每組 6 題的受控概念驗證。程式能執行不保證資料或程式邏輯沒有錯。</div>
+      <footer class="sourcefoot"><a href="../../wiki/concepts/PAL程式輔助與外部執行.md">Wiki：PAL 與來源論文印刷頁 31–40</a><span class="page-label">05 / 09</span></footer>
+    </article>
+
+    <article class="slide has-buddy" id="slide-6" role="group" aria-roledescription="投影片" aria-label="第 6 頁，共 9 頁" hidden>
+      <div class="eyebrow">MEMORY　/　05</div><span class="buddy buddy--book" aria-hidden="true"></span><h2 class="title">記憶機制有設計，增益仍待驗證</h2><p class="subtitle">Reflexion 和 RAG 對應不同階段：一個處理眼前的失敗，一個保存跨任務經驗。</p>
+      <div class="split">
+        <section class="card lav"><span class="label">Reflexion · 任務內修復</span><h3>診斷，再嘗試</h3><p>把錯誤訊息和失敗程式提供給模型，產生診斷後重試。</p></section>
+        <section class="card blue"><span class="label">RAG · 跨任務召回</span><h3>保存，再使用</h3><p>把修復經驗寫入記憶，供相似任務之後檢索。</p></section>
+      </div>
+      <div class="note"><strong>本論文測試：</strong>三組各 6 筆，全部 6/6 首輪通過。沒有失敗可修復，也就無法從這次測試量出額外記憶效益。</div>
+      <footer class="sourcefoot"><a href="../../wiki/concepts/Agent反思與檢索式記憶.md">Wiki：Agent 反思與檢索式記憶</a><span class="page-label">06 / 09</span></footer>
+    </article>
+
+    <article class="slide has-buddy" id="slide-7" role="group" aria-roledescription="投影片" aria-label="第 7 頁，共 9 頁" hidden>
+      <div class="eyebrow">EVIDENCE　/　06</div><span class="buddy buddy--laptop" aria-hidden="true"></span><h2 class="title">可靠度要按任務分開看</h2><p class="subtitle">這些數字不是一個可套用到所有市場情境的總準確率。</p>
+      <div class="statrow">
+        <section class="card blue"><span class="label">即時工具題</span><div class="num">6 / 6</div><p>工具增強組滿分</p></section>
+        <section class="card sage"><span class="label">實際執行題</span><div class="num">6 / 6</div><p>PAL Full 滿分</p></section>
+        <section class="card pink"><span class="label">模型自行估值</span><div class="num">5 / 6</div><p>PAL No-Execution 失敗</p></section>
+      </div>
+      <div class="note">各項評估樣本小；Reflexion／RAG 三組皆 6/6 首輪成功，增量效益未測出。指標計算正確也不等於交易有效。</div>
+      <footer class="sourcefoot"><a href="../../wiki/sources/李旻珊2026-LLM-Agent股票技術分析.md">Wiki 來源：四項概念驗證結果</a><span class="page-label">07 / 09</span></footer>
+    </article>
+
+    <article class="slide" id="slide-8" role="group" aria-roledescription="投影片" aria-label="第 8 頁，共 9 頁" hidden>
+      <div class="eyebrow">BOUNDARIES　/　07</div><h2 class="title">所以，它到底有多可靠？</h2>
+      <div class="grid2">
+        <section class="card sage"><span class="label">目前較有支持</span><h3>受控數值流程</h3><ul class="list"><li>工具補足即時資料</li><li>程式執行優於模型估算</li></ul></section>
+        <section class="card pink"><span class="label">目前仍未知</span><h3>真實投資表現</h3><ul class="list"><li>沒有回測或前瞻績效驗證</li><li>跨模型、跨股票穩定性未測</li></ul></section>
+        <section class="card blue"><span class="label">評估限制</span><h3>樣本與評審</h3><ul class="list"><li>多組只有 6 或 10 次</li><li>GPT-4o 也擔任評審</li></ul></section>
+        <section class="card yellow"><span class="label">研究範圍</span><h3>聚焦技術面</h3><ul class="list"><li>尚未納入基本面、新聞等</li><li>沒有正式使用者研究</li></ul></section>
+      </div>
+      <div class="flowbar">可行的分析原型　≠　已證明可靠的投資系統</div>
+      <footer class="sourcefoot"><a href="../../wiki/topics/LLM金融技術分析.md">Wiki：範圍、研究限制與待追問題</a><span class="page-label">08 / 09</span></footer>
+    </article>
+
+    <article class="slide has-buddy" id="slide-9" role="group" aria-roledescription="投影片" aria-label="第 9 頁，共 9 頁" hidden>
+      <div class="eyebrow">READING LIST　/　08</div><span class="buddy buddy--friends" aria-hidden="true"></span><h2 class="title">建議後續閱讀</h2><p class="subtitle">以下候選文獻尚未納入 Wiki，不作為本簡報的證據。</p>
+      <div class="reading">
+        <div><strong>Wang et al. (2024) · Agent 綜述</strong><span>DOI: 10.1007/s11704-024-40231-1</span></div>
+        <div><strong>Yao et al. (2023) · ReAct</strong><span>ICLR 2023 · reasoning and acting</span></div>
+        <div><strong>Gao et al. (2023) · PAL</strong><span>ICML 2023 · program-aided reasoning</span></div>
+        <div><strong>Shinn et al. (2023) · Reflexion</strong><span>NeurIPS 2023 · verbal reflection and memory</span></div>
+        <div><strong>Lewis et al. (2020) · RAG</strong><span>NeurIPS 2020 · retrieval-augmented generation</span></div>
+      </div>
+      <div class="note">完整書目、出版社連結、推薦理由和搜尋紀錄請見研究 Notes 最後一節。</div>
+      <footer class="sourcefoot"><a href="../../notes/20261115-finagent-agent-what-how-reliable/notes.md">開啟 Notes 與完整候選書目</a><span class="page-label">09 / 09</span></footer>
+    </article>
+  </section>
+  <div class="footbar" aria-hidden="true"><div class="progress" id="progress"></div></div>
+  <nav class="nav" aria-label="簡報導覽"><button id="prev" type="button" aria-label="上一頁">← 上一頁</button><span class="counter" id="counter" aria-live="polite">1 / 9</span><button id="next" type="button" aria-label="下一頁">下一頁 →</button></nav>
+  <p class="hint">使用按鈕或鍵盤 ← → 切換；列印時每頁各自成頁</p>
+</main>
+<script>
+(() => {
+ const slides = [...document.querySelectorAll('.slide')];
+ const counter = document.getElementById('counter');
+ const progress = document.getElementById('progress');
+ const prev = document.getElementById('prev');
+ const next = document.getElementById('next');
+ let current = 0;
+ function show(index) {
+   current = Math.max(0, Math.min(slides.length - 1, index));
+   slides.forEach((slide, i) => {
+     slide.hidden = i !== current;
+     slide.setAttribute('aria-label', `第 ${i + 1} 頁，共 ${slides.length} 頁`);
+   });
+   counter.textContent = `${current + 1} / ${slides.length}`;
+   progress.style.width = `${((current + 1) / slides.length) * 100}%`;
+   prev.disabled = current === 0;
+   next.disabled = current === slides.length - 1;
+ }
+ prev.addEventListener('click', () => show(current - 1));
+ next.addEventListener('click', () => show(current + 1));
+ document.addEventListener('keydown', (event) => {
+   if (event.altKey || event.ctrlKey || event.metaKey) return;
+   if (event.key === 'ArrowRight' || event.key === ' ') { event.preventDefault(); show(current + 1); }
+   if (event.key === 'ArrowLeft') { event.preventDefault(); show(current - 1); }
+   if (event.key === 'Home') show(0);
+   if (event.key === 'End') show(slides.length - 1);
+ });
+ show(0);
+})();
+</script>
+</body>
+</html>
+
+

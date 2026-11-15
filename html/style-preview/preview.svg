@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="2182" viewBox="0 0 1240 2182">
+<defs>
+ <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#514b49" flood-opacity=".12"/></filter>
+ <pattern id="papergrain" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".45" fill="#b8a98e" opacity=".14"/></pattern>
+</defs>
+<rect width="1240" height="2182" fill="#e8e2d8"/>
+<!-- slide 1 -->
+<g transform="translate(20 20)">
+ <rect width="1200" height="675" rx="24" fill="#f7f1e5" filter="url(#shadow)"/>
+ <path d="M820 0H1176Q1200 0 1200 24V651Q1200 675 1176 675H800C940 550 830 390 940 290C1040 200 820 140 820 0Z" fill="#eee7f0"/>
+ <rect x="0" y="0" width="1200" height="675" rx="24" fill="url(#papergrain)" opacity=".32"/>
+ <path d="M880 40l110 2 4 26-115-2z" fill="#d9c9ab" opacity=".65" transform="rotate(4 880 40)"/>
+ <rect x="82" y="69" width="208" height="42" rx="21" fill="#fffdf8" stroke="#e9ded5"/>
+ <circle cx="103" cy="90" r="6" fill="#b9c6ae"/><text x="122" y="96" font-family="Arial,sans-serif" font-size="15" fill="#625d68" letter-spacing="1">研究小誌　·　01</text>
+ <text x="82" y="172" font-family="Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="3" fill="#77717c">LLM AGENT · FINTECH</text><path d="M82 183h25" stroke="#e9b9ae" stroke-width="3" stroke-linecap="round"/>
+ <text x="80" y="275" font-family="Microsoft JhengHei,Noto Sans CJK TC,sans-serif" font-size="58" font-weight="700" fill="#3f3b46">讓 LLM 動手查資料，</text>
+ <text x="80" y="350" font-family="Microsoft JhengHei,Noto Sans CJK TC,sans-serif" font-size="58" font-weight="700" fill="#3f3b46">也把數字算對</text>
+ <text x="84" y="412" font-family="Microsoft JhengHei,Noto Sans CJK TC,sans-serif" font-size="22" fill="#726d78">金融技術分析 Agent 的設計觀察</text><text x="84" y="447" font-family="Microsoft JhengHei,Noto Sans CJK TC,sans-serif" font-size="18" fill="#726d78">從即時工具到可驗證的計算</text>
+ <circle cx="1000" cy="430" r="117" fill="#c8beda"/><circle cx="1000" cy="430" r="96" fill="none" stroke="#fff" stroke-opacity=".65" stroke-width="2" stroke-dasharray="3 6"/>
+ <text x="1000" y="391" text-anchor="middle" font-family="Microsoft JhengHei,Noto Serif CJK TC,serif" font-size="16" font-weight="700" fill="#5e5667">小小研究筆記</text><text x="1000" y="430" text-anchor="middle" font-family="Microsoft JhengHei,Noto Serif CJK TC,serif" font-size="24" font-weight="700" fill="#3f3b46">工具 × 推理</text><text x="1000" y="465" text-anchor="middle" font-family="Microsoft JhengHei,Noto Serif CJK TC,serif" font-size="24" font-weight="700" fill="#3f3b46">× 執行</text>
+ <text x="825" y="181" font-size="39" fill="#a996b2">✳</text><text x="1120" y="155" font-size="28" fill="#d1a99e">✦</text>
+ <text x="82" y="635" font-family="Arial,sans-serif" font-size="13" fill="#77717c">風格試樣 · 內容取自 Wiki</text><text x="1110" y="635" text-anchor="end" font-family="Georgia,serif" font-size="15" fill="#77717c">01 / 03</text>
+</g>
+<!-- slide 2 -->
+<g transform="translate(20 753)">
+ <rect width="1200" height="675" rx="24" fill="#f7f1e5" filter="url(#shadow)"/>
+ <path d="M880 0h296q24 0 24 24v90c-130 10-195-55-320-15z" fill="#ede6f1" opacity=".8"/>
+ <path d="M866 29l110-4-2 24-110 3z" fill="#c9bfdc" opacity=".72" transform="rotate(-4 866 29)"/>
+ <text x="82" y="78" font-family="Arial,sans-serif" font-size="16" font-weight="700" letter-spacing="2" fill="#77717c">SYSTEM NOTE　/　01</text><path d="M82 90h25" stroke="#e9b9ae" stroke-width="3" stroke-linecap="round"/>
+ <text x="82" y="155" font-family="Microsoft JhengHei,Noto Sans CJK TC,sans-serif" font-size="46" font-weight="700" fill="#3f3b46">把工作交給適合的角色</text>
+ <text x="82" y="198" font-family="Microsoft JhengHei,Noto Sans CJK TC,sans-serif" font-size="20" fill="#726d78">讓模型負責理解與解讀，讓工具和程式處理可查、可算的部分。</text>
+ <g filter="url(#shadow)"><rect x="82" y="256" width="294" height="245" rx="18" fill="#f4eff7"/><rect x="453" y="256" width="294" height="245" rx="18" fill="#eef4f2"/><rect x="824" y="256" width="294" height="245" rx="18" fill="#f9efed"/></g>
+ <rect x="101" y="246" width="63" height="18" fill="#d8c8ad" opacity=".7" transform="rotate(-5 101 246)"/><rect x="481" y="246" width="65" height="18" fill="#b9c6ae" opacity=".75" transform="rotate(4 481 246)"/><rect x="854" y="246" width="63" height="18" fill="#e9b9ae" opacity=".7" transform="rotate(-3 854 246)"/>
+ <text x="108" y="303" font-family="Georgia,serif" font-size="17" fill="#8b8094">01 · 理解</text><text x="108" y="355" font-family="Microsoft JhengHei,Noto Sans CJK TC,sans-serif" font-size="30" font-weight="700" fill="#3f3b46">LLM</text><text x="108" y="397" font-family="Microsoft JhengHei,Noto Sans CJK TC,sans-serif" font-size="17" fill="#68636e">理解問題、規劃要找的資料，</text><text x="108" y="426" font-family="Microsoft JhengHei,Noto Sans CJK TC,sans-serif" font-size="17" fill="#68636e">最後把結果整理成說明。</text>
+ <text x="479" y="303" font-family="Georgia,serif" font-size="17" fill="#8b8094">02 · 取得</text><text x="479" y="355" font-family="Microsoft JhengHei,Noto Sans CJK TC,sans-serif" font-size="30" font-weight="700" fill="#3f3b46">資料工具</text><text x="479" y="397" font-family="Microsoft JhengHei,Noto Sans CJK TC,sans-serif" font-size="17" fill="#68636e">取得即時股價與歷史資料，</text><text x="479" y="426" font-family="Microsoft JhengHei,Noto Sans CJK TC,sans-serif" font-size="17" fill="#68636e">提供指標計算所需輸入。</text>
+ <text x="850" y="303" font-family="Georgia,serif" font-size="17" fill="#8b8094">03 · 計算</text><text x="850" y="355" font-family="Microsoft JhengHei,Noto Sans CJK TC,sans-serif" font-size="30" font-weight="700" fill="#3f3b46">程式執行</text><text x="850" y="397" font-family="Microsoft JhengHei,Noto Sans CJK TC,sans-serif" font-size="17" fill="#68636e">實際計算指標數值，</text><text x="850" y="426" font-family="Microsoft JhengHei,Noto Sans CJK TC,sans-serif" font-size="17" fill="#68636e">再交回模型解釋。</text>
+ <text x="410" y="389" text-anchor="middle" font-family="Arial,sans-serif" font-size="33" fill="#a499aa">→</text><text x="781" y="389" text-anchor="middle" font-family="Arial,sans-serif" font-size="33" fill="#a499aa">→</text>
+ <rect x="319" y="535" width="563" height="48" rx="24" fill="#ebe5ef"/><text x="600" y="566" text-anchor="middle" font-family="Microsoft JhengHei,Noto Sans CJK TC,sans-serif" font-size="19" font-weight="700" fill="#554e5e">問題　✳　取數　✳　計算　✳　解讀</text>
+ <text x="82" y="635" font-family="Microsoft JhengHei,Noto Sans CJK TC,sans-serif" font-size="13" fill="#77717c">依據：李旻珊（2026），FinAgent 來源頁</text><text x="1110" y="635" text-anchor="end" font-family="Georgia,serif" font-size="15" fill="#77717c">02 / 03</text>
+</g>
+<!-- slide 3 -->
+<g transform="translate(20 1486)">
+ <rect width="1200" height="675" rx="24" fill="#f7f1e5" filter="url(#shadow)"/>
+ <path d="M990 0h186q24 0 24 24v90c-100-5-139-52-225-32z" fill="#eaf0e7" opacity=".9"/>
+ <path d="M895 30l110 3 1 23-112-1z" fill="#b9c6ae" opacity=".72" transform="rotate(3 895 30)"/>
+ <text x="82" y="76" font-family="Arial,sans-serif" font-size="16" font-weight="700" letter-spacing="2" fill="#77717c">RESULTS　/　A SMALL PROOF OF CONCEPT</text><path d="M82 89h25" stroke="#e9b9ae" stroke-width="3" stroke-linecap="round"/>
+ <text x="82" y="151" font-family="Microsoft JhengHei,Noto Sans CJK TC,sans-serif" font-size="43" font-weight="700" fill="#3f3b46">程式生成還不夠，</text><path d="M513 165h170" stroke="#e9d99a" stroke-width="13" opacity=".65"/><text x="515" y="151" font-family="Microsoft JhengHei,Noto Sans CJK TC,sans-serif" font-size="43" font-weight="700" fill="#3f3b46">真的執行</text><text x="686" y="151" font-family="Microsoft JhengHei,Noto Sans CJK TC,sans-serif" font-size="43" font-weight="700" fill="#3f3b46">很重要</text>
+ <text x="82" y="195" font-family="Microsoft JhengHei,Noto Sans CJK TC,sans-serif" font-size="20" fill="#726d78">論文中的 6 題對照測試，呈現出明顯差異。</text>
+ <g filter="url(#shadow)"><rect x="82" y="250" width="310" height="220" rx="18" fill="#edf3ee"/><rect x="420" y="250" width="310" height="220" rx="18" fill="#f8ecea"/><rect x="758" y="250" width="360" height="220" rx="18" fill="#f1edf5"/></g>
+ <text x="105" y="291" font-family="Microsoft JhengHei,Noto Sans CJK TC,sans-serif" font-size="15" fill="#726d78">PAL Full · 實際執行</text><text x="105" y="385" font-family="Georgia,serif" font-size="77" font-weight="700" fill="#544c5d">6/6</text><text x="105" y="432" font-family="Microsoft JhengHei,Noto Sans CJK TC,sans-serif" font-size="18" fill="#69636f">全部達滿分</text>
+ <text x="443" y="291" font-family="Microsoft JhengHei,Noto Sans CJK TC,sans-serif" font-size="15" fill="#726d78">PAL No-Execution · 模型估算</text><text x="443" y="385" font-family="Georgia,serif" font-size="77" font-weight="700" fill="#544c5d">5/6</text><text x="443" y="427" font-family="Microsoft JhengHei,Noto Sans CJK TC,sans-serif" font-size="16" fill="#69636f">題目未通過，多數為方向錯誤</text>
+ <text x="781" y="291" font-family="Microsoft JhengHei,Noto Sans CJK TC,sans-serif" font-size="15" fill="#726d78">Reflexion + RAG 測試</text><text x="781" y="385" font-family="Georgia,serif" font-size="70" font-weight="700" fill="#544c5d">100%</text><text x="781" y="423" font-family="Microsoft JhengHei,Noto Sans CJK TC,sans-serif" font-size="15" fill="#69636f">三組首輪皆成功；本次測試無法量出</text><text x="781" y="448" font-family="Microsoft JhengHei,Noto Sans CJK TC,sans-serif" font-size="15" fill="#69636f">記憶機制的額外效果</text>
+ <path d="M82 505h5v59h-5z" fill="#e9b9ae"/><rect x="87" y="505" width="1031" height="59" rx="0 12 12 0" fill="#fff8ef"/><text x="105" y="530" font-family="Microsoft JhengHei,Noto Sans CJK TC,sans-serif" font-size="15" font-weight="700" fill="#615c65">研究界線｜小樣本概念驗證；結果不代表交易績效，</text><text x="105" y="552" font-family="Microsoft JhengHei,Noto Sans CJK TC,sans-serif" font-size="15" fill="#615c65">也不能推論系統適用所有模型或市場。</text>
+ <text x="82" y="635" font-family="Microsoft JhengHei,Noto Sans CJK TC,sans-serif" font-size="13" fill="#77717c">依據：來源頁「四項概念驗證」與「研究限制」</text><text x="1110" y="635" text-anchor="end" font-family="Georgia,serif" font-size="15" fill="#77717c">03 / 03</text>
+</g>
+</svg>
+

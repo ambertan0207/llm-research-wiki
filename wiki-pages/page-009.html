@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="LLM 研究 Wiki：來源可追溯、頁面互相連結並持續整理。">
+  <meta name="theme-color" content="#F7F1E5">
+  <title>融合大語言模型新聞篩選、財經情感分析與技術指標之台灣股價預測研究｜LLM 研究 Wiki</title>
+  <link rel="stylesheet" href="../wiki-assets/site.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../index.html"><span class="brand-mark">研</span><span><strong>LLM 研究 Wiki</strong><small>從來源長出知識連結</small></span></a>
+    <nav class="topnav"><a href="../index.html">首頁</a><a href="../index.html#collections">知識頁</a><a href="../AGENTS.md">AI 維護規則</a></nav>
+  </header>
+  <div class="layout">
+    <aside class="sidebar"><a class="back-home" href="../index.html">← 回到 Wiki 首頁</a><div class="side-group"><span>研究主題</span><a class="side-link " href="../wiki-pages/page-013.html">LLM 金融技術分析</a></div>
+<div class="side-group"><span>核心概念</span><a class="side-link " href="../wiki-pages/page-001.html">Agent 反思與檢索式記憶</a><a class="side-link " href="../wiki-pages/page-002.html">CoT 與 Few-Shot 提示策略</a><a class="side-link " href="../wiki-pages/page-003.html">LLM-as-a-Judge 評估</a><a class="side-link " href="../wiki-pages/page-004.html">PAL：程式輔助語言模型與外部執行</a><a class="side-link " href="../wiki-pages/page-005.html">ReAct：推理與行動迴圈</a><a class="side-link " href="../wiki-pages/page-006.html">大型語言模型代理人</a><a class="side-link " href="../wiki-pages/page-007.html">自適應提示詞與 PromptEvolver</a></div>
+<div class="side-group"><span>研究來源</span><a class="side-link " href="../wiki-pages/page-011.html">以 LLM Agent 為核心之股票技術面分析輔助系統</a><a class="side-link " href="../wiki-pages/page-010.html">結合 LLM 新聞標題情緒分析與股價方向預測之研究</a><a class="side-link " href="../wiki-pages/page-008.html">結合 LLM 驅動之新聞處理與多元技術指標於股票趨勢預測</a><a class="side-link active" href="../wiki-pages/page-009.html">融合大語言模型新聞篩選、財經情感分析與技術指標之台灣股價預測研究</a></div>
+<div class="side-group"><span>綜述與比較</span><a class="side-link " href="../wiki-pages/page-012.html">LLM 新聞與技術指標股價預測：四篇來源比較</a></div></aside>
+    <main class="main-content"><article class="wiki-page">
+  <nav class="breadcrumbs"><a href="../index.html">首頁</a><span>›</span><span>研究來源</span></nav>
+  <header class="page-header"><div class="eyebrow">📚　研究來源</div><h1>融合大語言模型新聞篩選、財經情感分析與技術指標之台灣股價預測研究</h1><div class="page-meta"><span class="tag">LLM</span><span class="tag">FinBERT</span><span class="tag">特徵工程</span><span class="tag">台股</span><span class="tag">股價預測</span><span class="tag">碩士論文</span></div></header>
+  <div class="prose"><h1 id="融合大語言模型新聞篩選、財經情感分析與技術指標之台灣股價預測研究">融合大語言模型新聞篩選、財經情感分析與技術指標之台灣股價預測研究</h1>
+<h2 id="書目與來源">書目與來源</h2>
+<ul>
+<li>作者：孫佳鴻（Chia-Hung Sun）。</li>
+<li>年份：2026；封面標示中華民國 115 年 7 月（July 2026）。</li>
+<li>類型：國立宜蘭大學多媒體網路通訊數位學習碩士在職專班碩士論文。</li>
+<li>指導教授：吳政瑋。</li>
+<li>英文題名：<em>Integrating LLM News Filtering, Financial Sentiment Analysis, and Technical Indicators for Taiwan Stock Price Prediction</em>。</li>
+<li>DOI／永久網址：論文未列出。</li>
+<li>原始檔：<a href="../raw/融合大語言模型新聞篩選、財經情感分析與技術指標之台灣股價預測研究.pdf">PDF</a>。</li>
+<li>閱讀範圍：全文 62 頁；摘要、方法、結果、結論與限制（PDF 第 2、22–27、34–40 頁及附錄）。</li>
+</ul>
+<h2 id="研究問題與方法">研究問題與方法</h2>
+<p>研究以何銘哲（2025）報告的 FinBERT + XGBoost 架構為基準，固定中文新聞標題的 FinBERT 情緒特徵及價量特徵，檢驗新增技術指標、籌碼面與市場情緒特徵對台灣股票隔日（t+1）收盤價預測的影響。資料為 2024 年五檔台股、去重後 13,649 篇新聞標題；各股 242 個交易日。設計 16 種特徵組合、5 個隨機分割種子，合計 400 次 XGBoost 訓練。論文明確指出為維持與基準研究可比性，採用隨機 80/20 分割及全樣本配適 MinMaxScaler。</p>
+<p>本研究的 LLM 篩選策略來自先行研究基準：ChatGPT 生成個股關鍵字，再進行新聞比對；此論文自身固定使用去重後標題全集與 FinBERT 情緒特徵，重點是量化特徵的受控比較，不是重新比較 LLM 篩選策略。</p>
+<h2 id="主要發現">主要發現</h2>
+<ul>
+<li>完整 34 維組合 Q3 的五股平均 R² 由基準 0.9276 升至 0.9338，MAE 由 6.205 降至 5.507（11.3%），MSE 由 131.47 降至 102.05（22.4%）。作者報告 15 個股票×指標比較均改善。</li>
+<li>受控比較中，新增技術指標的整體邊際改善最大，其次為市場情緒，籌碼面平均貢獻較小；效果仍依股票與評估指標而異。</li>
+<li>指標間並非單調：完整特徵組合 Q3 的 MAE、MSE 最低，但較精簡的 16 維「精選技術指標＋市場情緒」組合取得最高平均 R²（0.9381）。</li>
+</ul>
+<h2 id="限制與注意事項">限制與注意事項</h2>
+<ul>
+<li>隨機切分會讓測試日穿插訓練日，全樣本 scaler 也使用測試期間分布，論文承認可能造成前視偏誤；絕對表現可能偏高，宜著重同一實驗設定下的相對比較。</li>
+<li>標的限五檔台股、單一 2024 年，且產業集中於半導體與電子；跨年份、跨市場與市場狀態的泛化仍未知。</li>
+<li>FinBERT 以英文財經語料訓練，輸入卻是中文標題，可能影響情感分數辨識力；各股新聞覆蓋也不同。</li>
+<li>預測目標是隔日收盤價迴歸，不等於方向分類或可交易獲利；本文未以含交易成本、滑價的嚴格時序回測證明投資效益。</li>
+<li>論文承接何銘哲（2025）研究；該前置論文尚未存入本 Wiki，需取得後才能完整核對基準設計與兩研究間的可比性。</li>
+</ul>
+<h2 id="與 Wiki 的關聯">與 Wiki 的關聯</h2>
+<p>本研究為目前 Wiki 中特徵融合與受控比較最完整的來源之一，可與 <a href="../wiki-pages/page-008.html">吳奉恩2026-MTI-LLM多技術指標與新聞處理</a> 比較：前者以 FinBERT 情緒固定、分析量化特徵邊際貢獻；後者以 Qwen2.5:3B 進行新聞篩選及情緒分類。另可與 <a href="../wiki-pages/page-010.html">張耿瑜2025-LLM新聞情緒與台積電預測</a>、<a href="../wiki-pages/page-011.html">李旻珊2026-LLM-Agent股票技術分析</a> 一併查看不同研究任務及證據邊界。</p>
+<h2 id="參考資料">參考資料</h2>
+<p>孫佳鴻（2026）。《融合大語言模型新聞篩選、財經情感分析與技術指標之台灣股價預測研究》〔碩士論文，國立宜蘭大學〕。原始 PDF 見 <code>raw/</code>。</p></div>
+  <div class="page-bottom"><a href="../index.html">← 回到知識總覽</a><a href="../wiki/sources/孫佳鴻2026-LLM新聞篩選與台股預測.md">查看 Markdown 原頁 ↗</a></div>
+</article></main>
+  </div>
+  <footer class="site-footer"><span>LLM Wiki · 以原始來源為依據，持續累積可追溯的研究知識</span><a href="../index.html">回到首頁 ↑</a></footer>
+  
+</body>
+</html>

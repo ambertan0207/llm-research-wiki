@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="LLM 研究 Wiki：來源可追溯、頁面互相連結並持續整理。">
+  <meta name="theme-color" content="#F7F1E5">
+  <title>LLM 金融技術分析｜LLM 研究 Wiki</title>
+  <link rel="stylesheet" href="../wiki-assets/site.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../index.html"><span class="brand-mark">研</span><span><strong>LLM 研究 Wiki</strong><small>從來源長出知識連結</small></span></a>
+    <nav class="topnav"><a href="../index.html">首頁</a><a href="../index.html#collections">知識頁</a><a href="../AGENTS.md">AI 維護規則</a></nav>
+  </header>
+  <div class="layout">
+    <aside class="sidebar"><a class="back-home" href="../index.html">← 回到 Wiki 首頁</a><div class="side-group"><span>研究主題</span><a class="side-link active" href="../wiki-pages/page-013.html">LLM 金融技術分析</a></div>
+<div class="side-group"><span>核心概念</span><a class="side-link " href="../wiki-pages/page-001.html">Agent 反思與檢索式記憶</a><a class="side-link " href="../wiki-pages/page-002.html">CoT 與 Few-Shot 提示策略</a><a class="side-link " href="../wiki-pages/page-003.html">LLM-as-a-Judge 評估</a><a class="side-link " href="../wiki-pages/page-004.html">PAL：程式輔助語言模型與外部執行</a><a class="side-link " href="../wiki-pages/page-005.html">ReAct：推理與行動迴圈</a><a class="side-link " href="../wiki-pages/page-006.html">大型語言模型代理人</a><a class="side-link " href="../wiki-pages/page-007.html">自適應提示詞與 PromptEvolver</a></div>
+<div class="side-group"><span>研究來源</span><a class="side-link " href="../wiki-pages/page-011.html">以 LLM Agent 為核心之股票技術面分析輔助系統</a><a class="side-link " href="../wiki-pages/page-010.html">結合 LLM 新聞標題情緒分析與股價方向預測之研究</a><a class="side-link " href="../wiki-pages/page-008.html">結合 LLM 驅動之新聞處理與多元技術指標於股票趨勢預測</a><a class="side-link " href="../wiki-pages/page-009.html">融合大語言模型新聞篩選、財經情感分析與技術指標之台灣股價預測研究</a></div>
+<div class="side-group"><span>綜述與比較</span><a class="side-link " href="../wiki-pages/page-012.html">LLM 新聞與技術指標股價預測：四篇來源比較</a></div></aside>
+    <main class="main-content"><article class="wiki-page">
+  <nav class="breadcrumbs"><a href="../index.html">首頁</a><span>›</span><span>研究主題</span></nav>
+  <header class="page-header"><div class="eyebrow">🪴　研究主題</div><h1>LLM 金融技術分析</h1><div class="page-meta"><span class="tag">FinTech</span><span class="tag">股票</span><span class="tag">技術分析</span><span class="tag">LLM-Agent</span><span class="tag">新聞情緒</span><span class="tag">股價預測</span></div></header>
+  <div class="prose"><h1 id="LLM 金融技術分析">LLM 金融技術分析</h1>
+<h2 id="範圍">範圍</h2>
+<p>此頁追蹤 LLM／Agent 如何取得金融市場資料、計算技術指標並解釋訊號。技術分析結果與投資報酬、交易策略有效性是不同研究問題，不能由指標計算正確直接推出投資獲利。</p>
+<h2 id="來源脈絡">來源脈絡</h2>
+<p>目前納入四篇台灣碩士論文，研究問題涵蓋 Agent 技術分析輔助、LLM 新聞情緒特徵、新聞過濾與多特徵股價迴歸。設計、期間與指標不同，不應將數值直接比較為方法排名。跨來源比較見 <a href="../wiki-pages/page-012.html">LLM新聞技術指標股價預測-四篇來源比較</a>。</p>
+<h3 id="Agent 技術分析輔助">Agent 技術分析輔助</h3>
+<p><a href="../wiki-pages/page-011.html">李旻珊2026-LLM-Agent股票技術分析</a> 建置以 GPT-4o 為推理核心的股票技術面輔助系統，整合即時行情、RSI/MACD/KD/SMA 等指標、ReAct 工具迴圈與 PAL 式後端程式執行。四項小型概念驗證中，工具組在 6 題全數滿分；PAL Full 在 6 題全數滿分，No-Execution 5/6 失敗；CoT/Few-Shot 的各組一致率 100%；Reflexion/RAG 比較因所有組別首輪 100% 通過而無法顯示額外效果。</p>
+<p>作者將系統定位為決策輔助，非投資決策替代品。研究未評估回測報酬，也未涵蓋基本面、新聞與總體經濟；沒有正式使用者試驗。</p>
+<h3 id="新聞情緒與收盤價預測">新聞情緒與收盤價預測</h3>
+<p><a href="../wiki-pages/page-010.html">張耿瑜2025-LLM新聞情緒與台積電預測</a> 以本地 Gemma／DeepSeek 處理鉅亨網新聞，再結合技術特徵，以 MLR 預測台積電隔日收盤價。論文報告測試集 RMSE 約 18.37 元、R² 約 0.5949。其題名使用「方向預測」，但實際目標是收盤價迴歸；且未見足以將整體結果歸因於情緒特徵的消融對照。</p>
+<h3 id="多特徵與新聞處理">多特徵與新聞處理</h3>
+<p><a href="../wiki-pages/page-008.html">吳奉恩2026-MTI-LLM多技術指標與新聞處理</a> 以 Qwen2.5:3B 篩選新聞並產生情緒特徵，結合技術指標後用 XGBoost／TFT 預測隔日收盤價。摘要與方法章列出的股票數量有差異，來源頁保留待核狀態。</p>
+<p><a href="../wiki-pages/page-009.html">孫佳鴻2026-LLM新聞篩選與台股預測</a> 在 FinBERT 情緒與價量基準上，以 16 種特徵組合和多種子比較技術、籌碼及市場情緒的邊際貢獻。作者報告完整特徵組合改善誤差指標，但承認隨機切分與全樣本正規化有前視偏誤風險，且未證明實際投資獲利。</p>
+<p>這些來源支持的是不同任務下的可行性或樣本內／測試集預測結果，並未形成「LLM 能可靠預測並獲利」的共同證據。</p>
+<h2 id="待追問題">待追問題</h2>
+<ul>
+<li>不同市場資料供應商的延遲、缺漏與公司行動調整，如何影響技術指標？</li>
+<li>對多模型／多資料源的 Agent 評估，如何避免同一模型同時生成與打分？</li>
+<li>如何將數值正確性、解釋品質、使用者信任與交易績效分開量測？</li>
+<li>對投資輔助介面，何種不確定性呈現能減少過度信任？</li>
+<li>若整合回測，如何避免前視偏誤、資料洩漏與過度擬合？</li>
+</ul>
+<h2 id="相關概念">相關概念</h2>
+<p><a href="../wiki-pages/page-006.html">大型語言模型代理人</a> · <a href="../wiki-pages/page-005.html">ReAct：推理與行動迴圈</a> · <a href="../wiki-pages/page-004.html">PAL：程式輔助語言模型與外部執行</a> · <a href="../wiki-pages/page-003.html">LLM-as-a-Judge 評估</a></p></div>
+  <div class="page-bottom"><a href="../index.html">← 回到知識總覽</a><a href="../wiki/topics/LLM金融技術分析.md">查看 Markdown 原頁 ↗</a></div>
+</article></main>
+  </div>
+  <footer class="site-footer"><span>LLM Wiki · 以原始來源為依據，持續累積可追溯的研究知識</span><a href="../index.html">回到首頁 ↑</a></footer>
+  
+</body>
+</html>

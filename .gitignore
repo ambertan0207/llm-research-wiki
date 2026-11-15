@@ -1,0 +1,11 @@
+# Obsidian 的視窗與分頁狀態是本機工作資訊，不屬於 Wiki 內容。
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# Python 暫存檔
+__pycache__/
+*.py[cod]
+
+# 作業系統檔案
+Thumbs.db
+.DS_Store

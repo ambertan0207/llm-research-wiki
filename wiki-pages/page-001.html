@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="LLM 研究 Wiki：來源可追溯、頁面互相連結並持續整理。">
+  <meta name="theme-color" content="#F7F1E5">
+  <title>Agent 反思與檢索式記憶｜LLM 研究 Wiki</title>
+  <link rel="stylesheet" href="../wiki-assets/site.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../index.html"><span class="brand-mark">研</span><span><strong>LLM 研究 Wiki</strong><small>從來源長出知識連結</small></span></a>
+    <nav class="topnav"><a href="../index.html">首頁</a><a href="../index.html#collections">知識頁</a><a href="../AGENTS.md">AI 維護規則</a></nav>
+  </header>
+  <div class="layout">
+    <aside class="sidebar"><a class="back-home" href="../index.html">← 回到 Wiki 首頁</a><div class="side-group"><span>研究主題</span><a class="side-link " href="../wiki-pages/page-013.html">LLM 金融技術分析</a></div>
+<div class="side-group"><span>核心概念</span><a class="side-link active" href="../wiki-pages/page-001.html">Agent 反思與檢索式記憶</a><a class="side-link " href="../wiki-pages/page-002.html">CoT 與 Few-Shot 提示策略</a><a class="side-link " href="../wiki-pages/page-003.html">LLM-as-a-Judge 評估</a><a class="side-link " href="../wiki-pages/page-004.html">PAL：程式輔助語言模型與外部執行</a><a class="side-link " href="../wiki-pages/page-005.html">ReAct：推理與行動迴圈</a><a class="side-link " href="../wiki-pages/page-006.html">大型語言模型代理人</a><a class="side-link " href="../wiki-pages/page-007.html">自適應提示詞與 PromptEvolver</a></div>
+<div class="side-group"><span>研究來源</span><a class="side-link " href="../wiki-pages/page-011.html">以 LLM Agent 為核心之股票技術面分析輔助系統</a><a class="side-link " href="../wiki-pages/page-010.html">結合 LLM 新聞標題情緒分析與股價方向預測之研究</a><a class="side-link " href="../wiki-pages/page-008.html">結合 LLM 驅動之新聞處理與多元技術指標於股票趨勢預測</a><a class="side-link " href="../wiki-pages/page-009.html">融合大語言模型新聞篩選、財經情感分析與技術指標之台灣股價預測研究</a></div>
+<div class="side-group"><span>綜述與比較</span><a class="side-link " href="../wiki-pages/page-012.html">LLM 新聞與技術指標股價預測：四篇來源比較</a></div></aside>
+    <main class="main-content"><article class="wiki-page">
+  <nav class="breadcrumbs"><a href="../index.html">首頁</a><span>›</span><span>核心概念</span></nav>
+  <header class="page-header"><div class="eyebrow">🧩　核心概念</div><h1>Agent 反思與檢索式記憶</h1><div class="page-meta"><span class="tag">Reflexion</span><span class="tag">RAG</span><span class="tag">Agent記憶</span><span class="tag">長期記憶</span></div></header>
+  <div class="prose"><h1 id="Agent 反思與檢索式記憶">Agent 反思與檢索式記憶</h1>
+<h2 id="區分兩種功能">區分兩種功能</h2>
+<p>在 <a href="../wiki-pages/page-011.html">李旻珊2026-LLM-Agent股票技術分析</a> 中，Reflexion 用於單次任務內的錯誤修復：把失敗程式、錯誤訊息與環境資訊交給模型診斷，再依診斷重試。RAG／向量檢索記憶則把已修復的經驗跨任務保存，在類似任務開始前檢索，嘗試將事後修復轉成預防提示。系統另有 PromptEvolver：評審回答品質並將具體改進規則存入記憶，於相似問題時召回。</p>
+<h2 id="證據狀態">證據狀態</h2>
+<p>作者對兩種歷史多指標任務各設 6 筆測試，Zero-shot、Reflexion Only、Reflexion+RAG 三組均為 6/6 Pass@1，沒有失敗、修復或記憶召回帶來的可觀察差異（印刷頁 28–30、37–39）。因此此測試沒有證明記憶機制提升成功率。可能原因包括基礎組天花板效應、樣本有限且任務規格明確；需更長期、多樣任務並實際誘發失敗才能評估邊際效果。</p>
+<h2 id="一般評估要點">一般評估要點</h2>
+<p>分開量測首輪通過率、修復成功率、總成功率、錯誤重複率、記憶召回品質、延遲／成本與錯誤記憶污染。需控制任務次序，確保測試集不與記憶庫洩漏；也要檢查記憶過時、誤召回與互相矛盾的經驗。</p>
+<h2 id="延伸">延伸</h2>
+<p>參見 <a href="../wiki-pages/page-006.html">大型語言模型代理人</a>、<a href="../wiki-pages/page-011.html">以 LLM Agent 為核心之股票技術面分析輔助系統</a>。論文引用 Reflexion（Shinn et al., 2023）與 RAG（Lewis et al., 2020），完整書目見來源頁。</p></div>
+  <div class="page-bottom"><a href="../index.html">← 回到知識總覽</a><a href="../wiki/concepts/Agent反思與檢索式記憶.md">查看 Markdown 原頁 ↗</a></div>
+</article></main>
+  </div>
+  <footer class="site-footer"><span>LLM Wiki · 以原始來源為依據，持續累積可追溯的研究知識</span><a href="../index.html">回到首頁 ↑</a></footer>
+  
+</body>
+</html>
