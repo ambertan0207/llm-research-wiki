@@ -76,6 +76,5 @@ GitHub 儲存庫：[ambertan0207/llm-research-wiki](https://github.com/ambertan0
 
 ## 教學 HTML 簡報作業
 
-- [作業提交說明](./作業提交說明.md)
 - [教學簡報：股票研究裡的 LLM Agent](./html/20261115-llm-agent-stock-market-tutorial/index.html)
 - [執行與反思紀錄](./notes/20261115-llm-agent-stock-market-tutorial/execution-reflection.md)
